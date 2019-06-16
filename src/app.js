@@ -1,4 +1,4 @@
-import React,{Component} from 'redux'
+import React,{Component} from 'react'
 
 
 export default class App extends Component{
