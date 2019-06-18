@@ -11,7 +11,7 @@ export default http = (method, url, data) => {
         return fetchPolyfill(url)
                 .then(res => {
                     if (res.status != 200) {
-                        console.log('错误信息' + res.msg);
+                        console.log('请求错误' + res.msg);
                     }
                     return res.json()
                 })
@@ -21,7 +21,7 @@ export default http = (method, url, data) => {
             body: JSON.stringify(data)
         }).then(res => {
             if (res.status != 200) {
-                console.log('错误信息' + res.msg);
+                console.log('请求错误' + res.msg);
             }
             return res.json()
         })
