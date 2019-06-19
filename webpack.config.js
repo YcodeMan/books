@@ -11,9 +11,7 @@ module.exports = {
     entry: [
         'react-hot-loader/patch',
         __dirname + '/src/main.js'
-    ]
-        
-    ,
+    ],
     output: {
         filename: '[name].js',
         path: PATH.build
@@ -41,14 +39,12 @@ module.exports = {
                     }
                 }
             },
-<<<<<<< HEAD
             // 配置热加载
             {
                 test: /\.(js|jsx)$/,
                 use: 'react-hot-loader/webpack',
                 include: /node_modules/
-            }
-=======
+            },
             {
                 test:/\.(jpg|png|gif)$/,
                 use:{
@@ -60,7 +56,6 @@ module.exports = {
                     }
                 }
             },
->>>>>>> wea
         ]
     },
     plugins: [

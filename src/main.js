@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Router from '@router'
-import App from './app'
+import "../public/css/reset.css"
+import "../public/js/flexble.js"
 
-<<<<<<< HEAD
 import { AppContainer } from 'react-hot-loader';
 
 const render= Component => {
@@ -25,12 +25,4 @@ if (module.hot) {
       render(Router);
     })
   }
-  
-=======
-ReactDOM.render(
-    <App/>,
-    document.getElementById('app'),
-    () => { console.log('挂载成功') }
-    
-)
->>>>>>> wea
+
