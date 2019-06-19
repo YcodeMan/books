@@ -16,7 +16,7 @@ export default class MySwiper extends Component{
     }
     render(){
         return(
-            <div className="swiper-container">
+            <div className="swiper-container" ref="swiper">
                 <div className="swiper-wrapper">
                     <div className="swiper-slide">
                         <img src="../../../public/images/1.png"/>
@@ -31,7 +31,7 @@ export default class MySwiper extends Component{
                         <img src="../../../public/images/4.png"/>
                     </div>
                 </div>
-                <div className="swiper-pagination"></div>
+                <div className="swiper-pagination" ref="pagination"></div>
             </div>
         )
     }

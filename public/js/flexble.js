@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> wea
  (function(win, lib) {
      var doc = win.document;
      var docEl = doc.documentElement;
@@ -119,8 +115,4 @@
          return val;
      }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> wea
  })(window, window['lib'] || (window['lib'] = {}));

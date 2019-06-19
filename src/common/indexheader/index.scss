@@ -1,4 +1,4 @@
-.indexheader{
+:global(.indexheader){
     width: 100%;
     background-color: #b83320;
     height: 1rem;
@@ -10,7 +10,7 @@
         width: 1.5rem;
         height: 0.36rem
     }
-    .sex{
+    :global(.sex){
         padding: 0.1rem 0.2rem;
         text-align: center;
         a{
@@ -33,7 +33,7 @@
             color: #999;
         }
     }
-    .icons{
+    :global(.icons){
         span{
             display: inline-block;
             width: 0.5rem;
@@ -50,15 +50,15 @@
         }
     }
 }
-.header{
+:global(.header){
     width: 100%;
-    .searchbox{
+    :global(.searchbox){
         width: 100%;
         height: 0.8rem;
         background-color: #fff;
         padding: 0.1rem 0.15rem;
     }
-    .search{
+    :global(.search){
         display: block;
         background-color: #ccc;
         height: 0.6rem;

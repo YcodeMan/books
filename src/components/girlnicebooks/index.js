@@ -18,7 +18,7 @@ export default class GirlNiceBooks extends Component{
                     <a href="#">校园</a>
                 </div>
                 <BookList/>
-                <div class="sublist">
+                <div className="sublist">
                     <h4>
                         <i>现代言情</i>
                         <span>隐婚深爱，前妻不好追</span>

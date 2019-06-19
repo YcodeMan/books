@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import Router from '@router'
 import App from './app'
 
-<<<<<<< HEAD
 import { AppContainer } from 'react-hot-loader';
 
 const render= Component => {
@@ -26,11 +25,4 @@ if (module.hot) {
     })
   }
   
-=======
-ReactDOM.render(
-    <App/>,
-    document.getElementById('app'),
-    () => { console.log('挂载成功') }
-    
-)
->>>>>>> wea
+

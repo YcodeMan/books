@@ -21,16 +21,23 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(css|scss)$/,
+                test: /\.(scss)$/,
                 use: ['style-loader',
                         {
                             loader:"css-loader",
                             options:{
                                 modules:true,
-                            }
+                            },
                         }
                     ,'sass-loader'
-                ]
+                ],
+            },
+            {
+                test: /\.(css)$/,
+                use: ['style-loader',
+                    "css-loader",
+                    'sass-loader'
+                ],
             },
             {
                 test: /\.(js|jsx)$/,
@@ -41,14 +48,12 @@ module.exports = {
                     }
                 }
             },
-<<<<<<< HEAD
             // 配置热加载
             {
                 test: /\.(js|jsx)$/,
                 use: 'react-hot-loader/webpack',
                 include: /node_modules/
-            }
-=======
+            },
             {
                 test:/\.(jpg|png|gif)$/,
                 use:{
@@ -60,7 +65,6 @@ module.exports = {
                     }
                 }
             },
->>>>>>> wea
         ]
     },
     plugins: [
