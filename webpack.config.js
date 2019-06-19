@@ -41,12 +41,26 @@ module.exports = {
                     }
                 }
             },
+<<<<<<< HEAD
             // 配置热加载
             {
                 test: /\.(js|jsx)$/,
                 use: 'react-hot-loader/webpack',
                 include: /node_modules/
             }
+=======
+            {
+                test:/\.(jpg|png|gif)$/,
+                use:{
+                    loader:"url-loader",
+                    options:{
+                        name:"[name][hash].[ext]",
+                        limit:100,
+                        outputPath:"./img"
+                    }
+                }
+            },
+>>>>>>> wea
         ]
     },
     plugins: [
