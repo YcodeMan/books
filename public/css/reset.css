@@ -1,0 +1,148 @@
+body,
+html {
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+}
+
+html *,
+html :after,
+html :before {
+    box-sizing: border-box;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font-family: PingFang SC, Helvetica Neue, Helvetica, STHeiTi, sans-serif !important
+}
+
+article,
+aside,
+blockquote,
+body,
+button,
+code,
+dd,
+details,
+dl,
+dt,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hr,
+input,
+legend,
+li,
+menu,
+nav,
+ol,
+p,
+pre,
+section,
+span,
+td,
+textarea,
+th,
+ul {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    font-size: 0.24rem
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+    display: block
+}
+
+audio,
+canvas,
+video {
+    display: inline-block
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font-family: PingFang SC, Helvetica Neue, Helvetica, STHeiTi, sans-serif;
+    color: #222;
+    font-weight: 400;
+    line-height: 1
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    padding: 0;
+    border: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+fieldset,
+img {
+    border: 0
+}
+
+img {
+    max-width: 100%;
+    border: none;
+}
+
+del {
+    text-decoration: line-through
+}
+
+ol,
+ul {
+    list-style: none
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative
+}
+
+:root sub,
+:root sup {
+    vertical-align: baseline
+}
+
+sup {
+    top: -.5em
+}
+
+sub {
+    bottom: -.25em
+}
+
+a,
+ins {
+    text-decoration: none
+}
