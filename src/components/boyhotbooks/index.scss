@@ -1,0 +1,22 @@
+:global(.boyhotbooks){
+    width: 100%;
+    border-top: 0.15rem solid #ddd;
+    :global(.title){
+        h3{
+            font-size: 0.3rem;
+            padding-left: 0.3rem;
+            border-left: 3px solid #b93321;
+            margin-top: 0.15rem;
+        }
+    }
+    :global(.loadmore){
+        a{
+            display: block;
+            margin: 0 0.3rem;
+            height: 0.8rem;
+            text-align: center;
+            color: #b93321;
+            line-height: 0.9rem;
+        }
+    }
+}

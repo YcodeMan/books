@@ -1,0 +1,36 @@
+:global(.cartoonListT){
+    width: 100%;
+    :global(.contenList){
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        a{
+            margin-bottom: 0.2rem;
+            flex: 30%;
+            margin-right: 2%;
+            img{
+                width: 100%;
+            }
+            h4{
+                font-size: 0.28rem;
+                color: #333;
+                padding-top: 0.1rem;
+                padding-left: 0.12rem;
+            }
+            :global(.cartoonInfo){
+                p{
+                    padding:0 0.12rem;
+                    padding-top: 0.2rem;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 1;
+                    overflow: hidden;
+                }
+            }
+           
+        }
+        a:nth-child(3n+3){
+            margin-right: 0;
+        }
+    }
+}

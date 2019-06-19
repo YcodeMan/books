@@ -1,4 +1,3 @@
-
  (function(win, lib) {
      var doc = win.document;
      var docEl = doc.documentElement;
@@ -115,6 +114,5 @@
          }
          return val;
      }
-
 
  })(window, window['lib'] || (window['lib'] = {}));

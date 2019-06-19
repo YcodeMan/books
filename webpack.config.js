@@ -21,16 +21,20 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(css|scss)$/,
+                test: /\.(scss)$/,
                 use: ['style-loader',
-                    {
-                        loader: "css-loader",
-                        options: {
-                            modules: true,
+                        {
+                            loader:"css-loader",
+                            options:{
+                                modules:true,
+                            },
                         }
-                    }
-                    , 'sass-loader', 
-                ]
+                    ,'sass-loader'
+                ],
+            },
+            {
+                test: /\.(css)$/,
+                use: ['style-loader', "css-loader", 'sass-loader'],
             },
             {
                 test: /\.(js|jsx)$/,
@@ -47,10 +51,24 @@ module.exports = {
                 use: 'react-hot-loader/webpack',
                 include: /node_modules/
             },
+<<<<<<< HEAD
             // { 
             //     test: /\.(png|woff|woff2|eot|ttf|svg)$/, 
             //     loader: 'url-loader'
             // }
+=======
+            {
+                test:/\.(jpg|png|gif)$/,
+                use:{
+                    loader:"url-loader",
+                    options:{
+                        name:"[name][hash].[ext]",
+                        limit:100,
+                        outputPath:"./img"
+                    }
+                }
+            },
+>>>>>>> d9fd8e4d2f71401374b8f52c83e047d2391c3896
         ]
     },
     plugins: [

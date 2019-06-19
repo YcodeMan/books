@@ -1,0 +1,77 @@
+:global(.boyfinishbooks){
+    width: 100%;
+    border-top: 0.15rem solid #ddd;
+    :global(.title){
+        h3{
+            font-size: 0.3rem;
+            padding-left: 0.3rem;
+            border-left: 3px solid #b93321;
+            margin-top: 0.15rem;
+        }
+    }
+    :global(.kindslist){
+        margin-top: 0.15rem;
+        padding: 0 0.7rem;
+        display: flex;
+        justify-content: space-around;
+        a{
+            color: #fff;
+            padding: 0.1rem 0.3rem;
+            font-size: 0.25rem;
+            border-radius: 0.05rem;
+        }
+        a:nth-child(1){
+            background-color: #90c5f0;
+        }
+        a:nth-child(2){
+            background-color: #f6bc7e;
+        }
+        a:nth-child(3){
+            background-color: #67ccb7;
+        }
+        a:nth-child(4){
+            background-color: #e78f8f;
+        }
+    }
+    :global(.sublist){
+        padding: 0.2rem;
+        border-bottom: 1px solid #ddd;
+        h4{
+            font-weight: 100;
+            i{
+                font-size: 0.22rem;
+                color: #ff8400;
+                border: 1px solid #ff8400;
+                border-radius: 0.05rem;
+                padding: 0 0.1rem;
+                font-style: normal;
+            }
+            span{
+                font-size: 0.28rem;
+                margin-left: 0.2rem;
+                color: #333;
+            }
+            b{
+                font-weight: 100;
+                color: #999;
+                margin-left: 0.2rem;
+            }
+        }
+        p{
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            padding-top: 0.08rem;
+        }
+    }
+    :global(.loadmore){
+        a{
+            display: block;
+            margin: 0 0.3rem;
+            height: 0.8rem;
+            text-align: center;
+            color: #b93321;
+            line-height: 0.9rem;
+        }
+    }
+}

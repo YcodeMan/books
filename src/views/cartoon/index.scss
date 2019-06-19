@@ -1,0 +1,137 @@
+.cartoon{
+    // 卡通页面导航栏
+    .cartoonNav{
+        width: 100%;
+        .nav{
+            padding: 0 0.4rem;
+            display: flex;
+            justify-content: space-between;
+            a{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0.2rem 0;
+                i{
+                    display: inline-block;
+                    width: 1.1rem;
+                    height: 1.1rem;
+                }
+                span{
+                    margin-top: 0.15rem;
+                }
+            }
+            a:nth-child(1){
+                i{
+                    background: url(../../../public/images/nav01.png) no-repeat;
+                    background-size: cover;
+                }
+            }
+            a:nth-child(2){
+                i{
+                    background: url(../../../public/images/nav02.png) no-repeat;
+                    background-size: cover;
+                }
+            } a:nth-child(3){
+                i{
+                    background: url(../../../public/images/nav03.png) no-repeat;
+                    background-size: cover;
+                }
+            }
+        }
+    }
+    // 人气栏title和其他栏title共用
+    .personHot{
+        border-top: 0.2rem solid #f4f4f4;
+        width: 100%;
+        .title{
+            padding:0.2rem;
+            display: flex;
+            justify-content: space-between;
+            
+            .titleLeft{
+                display: flex;
+                align-items: center;
+               
+                span{
+                    font-size: 0.35rem;
+                    padding-left: 0.25rem;
+                }
+                i{
+                    display: inline-block;
+                    width: 0.5rem;
+                    height: 0.5rem;
+                }
+            }
+            .titleRight{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                span{
+                    font-size: 0.3rem;
+                    color: #a3a3a3;
+                }
+              i{
+                margin-left: 0.15rem;
+                display: inline-block;
+                width: 0;
+                height: 0;
+                border-width: 0.1rem 0 0.1rem 0.1rem;
+                border-style: solid;
+                border-color: transparent transparent transparent #a3a3a3;
+              }
+            }
+        }
+        .firstBig{
+            .bigbanner{
+                width: 100%;
+                height: 3.6rem;
+            }
+            h4{
+                padding: 0.1rem 0.15rem;
+                font-size: 0.3rem;
+                color: #333;
+            }
+            p{
+                padding: 0 0.15rem 0.2rem 0.15rem;
+            }
+        }
+    }
+    .iconPic1{
+        background: url(../../../public/images/rq.png) no-repeat;
+        background-size: cover;
+    }
+    .iconPic2{
+        background: url(../../../public/images/df.png) no-repeat;
+        background-size: cover;
+    }
+    .iconPic3{
+        background: url(../../../public/images/rx.png) no-repeat;
+        background-size: cover;
+    }
+    .iconPic4{
+        background: url(../../../public/images/wj.png) no-repeat;
+        background-size: cover;
+    }
+    .iconPic5{
+        background: url(../../../public/images/sn.png) no-repeat;
+        background-size: cover;
+    }
+    .iconPic6{
+        background: url(../../../public/images/ql.png) no-repeat;
+        background-size: cover;
+    }
+    .iconPic7{
+        background: url(../../../public/images/qk.png) no-repeat;
+        background-size: cover;
+    }
+    .iconPic8{
+        background: url(../../../public/images/vip.png) no-repeat;
+        background-size: cover;
+    }
+    .iconPic9{
+        background: url(../../../public/images/bx.png) no-repeat;
+        background-size: cover;
+    }
+       
+    
+}
