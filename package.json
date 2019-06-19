@@ -47,6 +47,8 @@
     "redux-immutable": "^4.0.0",
     "redux-promise-middleware": "^6.1.0",
     "redux-thunk": "^2.3.0",
+    "scss-loader": "0.0.1",
+    "swiper": "^4.5.0",
     "whatwg-fetch": "^3.0.0"
   }
 }

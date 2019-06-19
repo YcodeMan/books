@@ -28,7 +28,18 @@ module.exports = {
                         presets: ['@babel/env','@babel/react']
                     }
                 }
-            }
+            },
+            {
+                test:/\.(jpg|png|gif)$/,
+                use:{
+                    loader:"url-loader",
+                    options:{
+                        name:"[name][hash].[ext]",
+                        limit:100,
+                        outputPath:"./img"
+                    }
+                }
+            },
         ]
     },
     plugins: [
