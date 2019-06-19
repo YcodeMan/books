@@ -11,13 +11,13 @@ module.exports = {
     entry: [
         'react-hot-loader/patch',
         __dirname + '/src/main.js'
-    ]
-        
-    ,
+    ],
     output: {
         filename: '[name].js',
-        path: PATH.build
+        path: PATH.build,
+        publicPath:'/',
     },
+   
     module: {
         rules: [
             {
@@ -34,10 +34,7 @@ module.exports = {
             },
             {
                 test: /\.(css)$/,
-                use: ['style-loader',
-                    "css-loader",
-                    'sass-loader'
-                ],
+                use: ['style-loader', "css-loader", 'sass-loader'],
             },
             {
                 test: /\.(js|jsx)$/,
@@ -54,6 +51,12 @@ module.exports = {
                 use: 'react-hot-loader/webpack',
                 include: /node_modules/
             },
+<<<<<<< HEAD
+            // { 
+            //     test: /\.(png|woff|woff2|eot|ttf|svg)$/, 
+            //     loader: 'url-loader'
+            // }
+=======
             {
                 test:/\.(jpg|png|gif)$/,
                 use:{
@@ -65,6 +68,7 @@ module.exports = {
                     }
                 }
             },
+>>>>>>> d9fd8e4d2f71401374b8f52c83e047d2391c3896
         ]
     },
     plugins: [
@@ -76,23 +80,29 @@ module.exports = {
     ],
     resolve: {
         alias: {
-            '@':path.join(__dirname, 'src'),
-            '@store':path.join(__dirname, 'src/store'),
-            '@views':path.join(__dirname, 'src/views'),
-            '@common':path.join(__dirname, 'src/common'),
+            '@': path.join(__dirname, 'src'),
+            '@store': path.join(__dirname, 'src/store'),
+            '@views': path.join(__dirname, 'src/views'),
+            '@common': path.join(__dirname, 'src/common'),
             '@components': path.join(__dirname, 'src/components'),
             '@utils': path.join(__dirname, 'src/utils'),
             '@api': path.join(__dirname, 'src/api'),
             '@router': path.join(__dirname, 'src/router'),
-            
+            '@actions': path.join(__dirname, 'src/store/actions'),
+            '@public': path.join(__dirname, 'public')
+
         }
     },
     devServer: {
-        hot: true, 
+        hot: true,
         proxy: {
+            '/': {
+                target: 'http://api.zhuishushenqi.com'
+            },
             'ranking': {
-               target: 'http://api.zhuishushenqi.com'
-            }
+                target: 'http://api.zhuishushenqi.com'
+            },
+            
         }
     }
 }

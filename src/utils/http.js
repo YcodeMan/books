@@ -1,7 +1,7 @@
 import {fetch as fetchPolyfill} from 'whatwg-fetch'
 
 
-export default http = (method, url, data) => {
+  const http = (method, url, data) => {
     if (method == 'get') {
         let str = ''
         for (let key in data) {
@@ -27,3 +27,4 @@ export default http = (method, url, data) => {
         })
     }   
 }
+export default http
