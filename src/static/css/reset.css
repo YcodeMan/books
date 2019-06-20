@@ -3,6 +3,7 @@ html {
     overflow-y: auto;
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 html *,
@@ -111,10 +112,7 @@ img {
 img {
     max-width: 100%;
     border: none;
-}
-
-del {
-    text-decoration: line-through
+    display: block;
 }
 
 ol,
@@ -122,27 +120,37 @@ ul {
     list-style: none
 }
 
-sub,
-sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative
-}
-
-:root sub,
-:root sup {
-    vertical-align: baseline
-}
-
-sup {
-    top: -.5em
-}
-
-sub {
-    bottom: -.25em
-}
-
 a,
 ins {
-    text-decoration: none
+    text-decoration: none;
+    color: #666;
+}
+
+fieldset {
+    border: none;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+th,
+var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+body {
+    color: #333;
+}
+
+/*清除浮动*/
+.clear {
+    clear: both
+}
+
+i {
+    font-style: normal;
 }

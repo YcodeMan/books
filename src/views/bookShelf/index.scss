@@ -1,0 +1,163 @@
+.bookShelf {
+    .tab {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 1rem;
+        background: #fff;
+
+        .item {
+            width: 40%;
+            height: 1rem;
+            font-size: .28rem;
+            color: #999;
+            text-align: center;
+            line-height: 1rem
+        }
+
+        .line {
+            width: 1px;
+            height: .2rem;
+            margin: 0 .04rem;
+            background: #dfdfdf;
+        }
+
+        .active {
+            position: relative;
+            color: #b83320;
+
+            &:after {
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                margin-left: -.35rem;
+                content: "";
+                width: .7rem;
+                height: .04rem;
+                background: #b83320;
+            }
+        }
+    }
+
+    .bookTab {
+        background: #f4f4f4;
+
+        .top {
+            height: 1.1rem;
+            line-height: 1.1rem;
+            color: #999;
+            padding: 0 .3rem;
+
+            .right {
+                float: right;
+
+                .edit {
+                    span {
+
+                        margin-right: .26667rem;
+                    }
+
+                    .delete {
+                        color: #b93321
+                    }
+                }
+            }
+        }
+
+
+        .bookList {
+            background: #fff;
+
+            a {
+                padding-left: .3rem;
+                display: block;
+
+                .inner {
+                    padding: .3rem .3rem .3rem 0;
+                    position: relative;
+
+                    .cover {
+                        margin: 0;
+                        width: 1.2rem;
+                        height: 1.5rem;
+                        float: left;
+                        border: 1px solid #ebebeb;
+                        background: url(/image/38b2adca9779.img-bk.png) no-repeat;
+                        background-position: 50%;
+                        background-size: 100%;
+                        overflow: hidden;
+
+                    }
+
+                    .right {
+                        margin-left: 1.5rem;
+                        height: 1.5rem;
+
+                        .name {
+                            line-height: .4rem;
+                            color: #333 !important;
+                            font-size: .28rem;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+
+                        }
+
+                        p {
+                            line-height: .4rem;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            color: #999;
+                        }
+                    }
+
+                    .toDetail {
+                        position: absolute;
+                        top: 20%;
+                        right: 0;
+                        width: 1rem;
+                        height: 1rem;
+                        background: transparent url(https://wechatapp.zhuishushenqi.com/zhuishu/images/icon/toBookDetail.png) 50% no-repeat;
+                        background-size: .5rem .5rem;
+                        opacity: .7;
+                    }
+                }
+            }
+
+
+        }
+
+        .toHome {
+            display: block;
+            margin: .5rem auto 0;
+            width: 5.16rem;
+            height: .8rem;
+            text-align: center;
+            line-height: .8rem;
+            color: #cf1b1b;
+            font-size: .3rem;
+            border: 1px solid #cf1b1b;
+        }
+
+    }
+
+    /* 无阅读记录 */
+    .noData {
+        height: 2.7rem;
+        width: 100%;
+        text-align: center;
+        padding-top: 0.8rem;
+
+        p {
+            line-height: 1.2rem;
+            height: 1.2rem;
+            color: #999;
+
+            span {
+                text-decoration: underline;
+            }
+        }
+    }
+}

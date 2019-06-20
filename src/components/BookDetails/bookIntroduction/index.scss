@@ -1,0 +1,41 @@
+$c_gray : #999;
+:global(.introduction){
+    padding: 0 .5rem;
+    position: relative;
+    p {
+        font-size: .28rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+     .active {
+        height: auto;
+        overflow: auto;
+        display: block;
+    }
+    .arrow {
+        position:absolute;
+        right: 0.3rem;
+        bottom: -0.1rem;
+        font-size: .3rem;
+        font-weight: 200;
+    }
+}
+:global(.catalogue) {
+    padding: .5rem;
+    display: flex;
+    justify-content: space-between;
+    span{
+        font-size: .28rem;
+    }
+    b { 
+        vertical-align: top;
+        color: $c_gray;
+        i {
+            padding-left: .2rem;
+            font-size: .3rem;
+        }
+    }
+}
