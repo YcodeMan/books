@@ -1,16 +1,16 @@
 import React,{Component} from './node_modules/react'
 
 import IndexHeader from "../../common/indexheader"
-import ShortBook from "../../components/shortBook"
-import GirlRedBooks from "../../components/girlredbooks"
-import BoyHotBooks from "../../components/boyhotbooks"
-import BoyGodBooks from "../../components/boygodbooks"
-import GirlNiceBooks from "../../components/girlnicebooks"
-import BoyFinishBooks from "../../components/boyfinishbooks"
 import MySwiper from "../../common/swiper"
-import Nav from "../../components/nav"
+import Nav from "../../components/home/nav"
 
- 
+import CityLife from "../../components/home/citylife"
+import GirHBooks from "../../components/home/ghotbooks"
+import WuXia from "../../components/home/wuxia"
+import School from "../../components/home/school"
+import QiHuan from "../../components/home/qihuan"
+import XianXia from "../../components/home/xianxia"
+
 
 export default class Home extends Component{
     render() {
@@ -19,12 +19,13 @@ export default class Home extends Component{
                 <IndexHeader/>
                 <MySwiper/>
                 <Nav/>
-                <ShortBook/>
-                <GirlNiceBooks/>
-                <GirlRedBooks/>
-                <BoyHotBooks/>
-                <BoyFinishBooks/>
-                <BoyGodBooks/>
+
+                <CityLife/>
+                <QiHuan/>
+                <WuXia/>
+                <School/>
+                <GirHBooks/>
+                <XianXia/>
             </div>
         )
     }

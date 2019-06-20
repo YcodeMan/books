@@ -51,6 +51,13 @@ module.exports = {
                 use: 'react-hot-loader/webpack',
                 include: /node_modules/
             },
+<<<<<<< HEAD
+=======
+            // { 
+            //     test: /\.(png|woff|woff2|eot|ttf|svg)$/, 
+            //     loader: 'url-loader'
+            // }
+>>>>>>> wea
             {
                 test:/\.(jpg|png|gif)$/,
                 use:{
@@ -62,8 +69,11 @@ module.exports = {
                     }
                 }
             },
+<<<<<<< HEAD
             // { test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, 
             //     loader: 'url-loader?limit=50000&name=[path][name].[ext]'},
+=======
+>>>>>>> wea
         ]
     },
     plugins: [

@@ -2,13 +2,17 @@ import React,{Component} from 'react'
 import {HashRouter as Router, Route, Redirect,Switch} from 'react-router-dom'
 import AsyncComponent from '@common/asyncComponent'
 import Home from '@views/home'
+<<<<<<< HEAD
 import Login from '@views/login'
 import BookShelf from '@views/bookShelf';
 import Category from '@views/category';
 import Cartoon from '@views/cartoon'
 
+=======
+>>>>>>> wea
 
 const BookDetails  = AsyncComponent(() => import('@views/BookDetails'))
+const Cartoon  = AsyncComponent(() => import('@views/cartoon'))
 
 
 export default class RouterConfig extends Component{
@@ -25,7 +29,6 @@ export default class RouterConfig extends Component{
                     <Route path='/category' exact component={Category} />
                     <Route path='/cartoon' exact component={Cartoon} />
                     <Redirect to='/' />
-
                 </Switch>
             </Router>
         )

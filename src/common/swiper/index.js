@@ -19,16 +19,16 @@ export default class MySwiper extends Component{
             <div className="swiper-container" ref="swiper">
                 <div className="swiper-wrapper">
                     <div className="swiper-slide">
-                        <img src="../../../public/images/1.png"/>
+                        <img src="/public/images/1.png"/>
                     </div>
                     <div className="swiper-slide">
-                        <img src="../../../public/images/2.png"/>
+                        <img src="/public/images/2.png"/>
                     </div>
                     <div className="swiper-slide">
-                        <img src="../../../public/images/3.png"/>
+                        <img src="/public/images/3.png"/>
                     </div>
                     <div className="swiper-slide">
-                        <img src="../../../public/images/4.png"/>
+                        <img src="/public/images/4.png"/>
                     </div>
                 </div>
                 <div className="swiper-pagination" ref="pagination"></div>

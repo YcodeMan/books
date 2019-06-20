@@ -6,7 +6,7 @@ export default class IndexHeader extends Component{
         return(
             <div className="header">
                 <div className="indexheader">
-                    <img src="../../../public/images/logo.png"/>
+                    <img src="/public/images/logo.png"/>
                     <div className="sex">
                         <a href="#">男生</a>
                         <a href="#">女生</a>
