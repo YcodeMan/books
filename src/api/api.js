@@ -13,7 +13,7 @@ export const getCrunchies = () => http(
 )
 
 /**
- * 用途： 获取文章的类别
+ * 用途： 获取文章的类别下的小分类
  *  @param method  
  *  @param url
  *  @param data
@@ -23,12 +23,14 @@ export const getTitleClass = () => http(
     'get',
     '/cats/lv2'
 )
+
 /**
  * 用途： 获取书本详细信息
  * 
  */
 export const getBookDetail = () => http(
     'get',
+<<<<<<< HEAD
     '/book/548d9c17eb0337ee6df738f5'
 ) 
 
@@ -42,3 +44,20 @@ export const getBookComment = () => http(
     '/post/review/best-by-book',
     { book: '5b335b9296db9d2c6f3db6de', limit: 10}
 ) 
+=======
+    '/book/57206c3539a913ad65d35c7b'
+) 
+
+
+/**
+ * 用途： 获取所有类别
+ *  @param method  
+ *  @param url
+ *  @param data
+ *  @return example  "male":[{"name":"玄幻","bookCount":578792,"monthlyCount":22549,"icon":"/icon/玄幻_.png"
+ */
+export const getCategory = () => http(
+    'get',
+    '/cats/lv2/statistics'
+)
+>>>>>>> e7665ec2bc3784dbaeeedd06a13ae93a014dc21b

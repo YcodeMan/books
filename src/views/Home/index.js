@@ -1,4 +1,4 @@
-import React,{Component} from 'react'
+import React,{Component} from './node_modules/react'
 
 import IndexHeader from "../../common/indexheader"
 import ShortBook from "../../components/shortBook"

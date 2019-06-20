@@ -8,6 +8,7 @@ const PATH = {
 }
 
 module.exports = {
+    mode: 'development',
     entry: [
         'react-hot-loader/patch',
         __dirname + '/src/main.js'
@@ -17,7 +18,6 @@ module.exports = {
         path: PATH.build,
         publicPath:'/',
     },
-   
     module: {
         rules: [
             {
@@ -71,7 +71,7 @@ module.exports = {
             filename: 'index.html',
             template: 'index.html'
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
     ],
     resolve: {
         alias: {
@@ -83,6 +83,7 @@ module.exports = {
             '@utils': path.join(__dirname, 'src/utils'),
             '@api': path.join(__dirname, 'src/api'),
             '@router': path.join(__dirname, 'src/router'),
+            '@static': path.join(__dirname, 'src/static'),
             '@actions': path.join(__dirname, 'src/store/actions'),
             '@public': path.join(__dirname, 'public'),
             '@filters': path.join(__dirname, 'src/filters')
@@ -99,15 +100,20 @@ module.exports = {
                 changeOrigin: true,
 
             },
-            '/': {
-                target: 'http://api.zhuishushenqi.com',
-                changeOrigin: true,
-            },
             'ranking': {
                 target: 'http://api.zhuishushenqi.com',
-                changeOrigin: true,
+                changeOrigin: true
             },
-           
+            //获取分类
+            'cats': {
+                target: 'http://api.zhuishushenqi.com',
+                changeOrigin: true
+            },
+            '/': {
+                target: 'http://api.zhuishushenqi.com',
+                changeOrigin: true
+            },
+
         }
     }
 }

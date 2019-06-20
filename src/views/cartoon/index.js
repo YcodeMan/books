@@ -24,16 +24,16 @@ export default class CarToon extends Component{
                 <div className="swiper-container">
                     <div className="swiper-wrapper">
                         <div className="swiper-slide">
-                            <img src="../../../public/images/manhua1.png"/>
+                            <img src="/src/static/img/manhua1.png"/>
                         </div>
                         <div className="swiper-slide">
-                            <img src="../../../public/images/manhua2.png"/>
+                            <img src="/src/static/img/manhua2.png"/>
                         </div>
                         <div className="swiper-slide">
-                            <img src="../../../public/images/manhua3.png"/>
+                            <img src="/src/static/img/manhua3.png"/>
                         </div>
                         <div className="swiper-slide">
-                            <img src="../../../public/images/manhua4.png"/>
+                            <img src="/src/static/img/manhua4.png"/>
                         </div>
                     </div>
                     <div className="swiper-pagination"></div>
@@ -82,7 +82,7 @@ export default class CarToon extends Component{
                         </a>
                     </h4>
                     <a className="firstBig">
-                        <img className="bigbanner"  src="../../../public/images/bigpic.png"/>
+                        <img className="bigbanner"  src="/src/static/img/bigpic.png"/>
                         <h4>拂晓的花嫁</h4>
                         <p>沉沦在你的鲜血里</p>
                     </a>

@@ -1,0 +1,38 @@
+section{
+    h4 {
+        padding: 0 .3rem;
+        height: 1.2rem;
+        line-height: 1.2rem;
+        font-weight: 400;
+    }
+    .categoryList{
+        font-size: 0px;
+        border-top: 1px solid #f8f8f8;
+        a{
+            display: inline-block;
+            vertical-align: middle;
+            width: 33%;
+            height: 1.2rem;
+            padding: .2rem;
+            text-align: center;
+            border-right: 1px solid #f8f8f8;
+            border-bottom: 1px solid #f8f8f8;
+            &:nth-child(3n){
+                border-right: none;
+            }
+            .name {
+                display: block;
+                line-height: .38rem;
+                font-size: .3rem;
+                font-weight: 700;
+                color: #333;
+            }
+            .count {
+                display: block;
+                line-height: .38rem;
+                font-size: .24rem;
+                color: #ccc;
+            }
+        }
+    }
+}

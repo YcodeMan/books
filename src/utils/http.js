@@ -2,12 +2,11 @@ import {fetch as fetchPolyfill} from 'whatwg-fetch'
 import qs from 'qs'
 
 
-  const http = (method, url, data) => {
+const http = (method, url, data) => {
     if (method == 'get') {
         let str = ''
         for (let key in data) {
             str += ('&' + key + '=' + data[key])
-           
         }
         url = (url + '?' + str.slice(1))
         return fetchPolyfill(url)

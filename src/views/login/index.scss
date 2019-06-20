@@ -1,0 +1,90 @@
+.inner {
+    background: #f4f4f4;
+    min-height: 6.7rem;
+    position: relative;
+
+    .prompt {
+        background-size: 100% 1px;
+        background-image: linear-gradient(180deg, transparent 50%, #dfdfdf 0);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        display: none;
+        height: .6rem;
+        line-height: .6rem;
+        color: #b93221;
+        font-size: .28rem;
+        position: absolute;
+        left: 29%;
+        
+
+        .promptIcon {
+            display: inline-block;
+            margin-right: .1rem;
+            vertical-align: middle;
+            width: .24rem;
+            height: .24rem;
+            background: url('/src/static/img/prompt_icon.png') no-repeat;
+            background-size: 100%;
+            background-position: 50%;
+        }
+    }
+
+    .title {
+        padding: 2rem 0 0;
+        margin: 0 auto;
+        background: url('/src/static/img/login_title.png') no-repeat;
+        background-size: 100%;
+        background-position: 50% 100%;
+        height: .3rem;
+        width: 4.06rem;
+    }
+
+    .login {
+        margin: 0.8rem 0 0;
+        width: 100%;
+        text-align: center;
+
+        .channelQQ {
+            font-size: .56rem;
+            
+            .qq {
+                background: url('/src/static/img/qq.png') no-repeat;
+                background-size: 100%;
+            }
+            p{
+                color: #4d99e7;
+            }
+        }
+
+        .channelWeibo {
+            font-size: .48rem;
+
+            .weibo {
+                background: url('/src/static/img/blog.png') no-repeat;
+                background-size: 100%;
+            }
+
+            P {
+                color: #e34737;
+            }
+        }
+
+        .channel {
+            display: inline-block;
+            text-align: center;
+            margin: 0 .6rem;
+
+            div {
+                display: inline-block;
+                width: 1rem;
+                height: 1rem;
+                background-position: 50%;
+                background-size: 100%;
+            }
+
+            p {
+                margin-top: .24rem;
+            }
+        }
+    }
+}

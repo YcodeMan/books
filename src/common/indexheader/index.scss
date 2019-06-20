@@ -41,11 +41,11 @@
         }
         span:nth-child(1){
             margin-right: 0.15rem;
-            background: url(../../../public/images/page.png) no-repeat;
+            background: url(/src/static/img/page.png) no-repeat;
             background-size: cover;
         }
         span:nth-child(2){
-            background: url(../../../public/images/mine.png) no-repeat;
+            background: url(/src/static/img/mine.png) no-repeat;
             background-size: cover;
         }
     }
@@ -73,7 +73,7 @@
             display: inline-block;
             width: 0.5rem;
             height: 0.5rem;
-            background: url(../../../public/images/search.png) no-repeat;
+            background: url(/src/static/img/search.png) no-repeat;
             background-size: cover;
             margin-right: 0.1rem;
         }

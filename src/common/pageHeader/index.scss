@@ -1,0 +1,58 @@
+.pageHeader {
+    background-color: #b93321;
+    color: #fff;
+    height: 0.88rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+
+    .back {
+        padding-left: .2rem;
+
+        i {
+            font-style: normal;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .icon {
+            width: .4rem;
+            height: .88rem;
+            background: url('~@static/img/back.png') no-repeat;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: 50%
+        }
+    }
+
+    h1 {
+        width: 60%;
+        font-size: .28rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden
+    }
+
+    .goto {
+        height: 100%;
+        padding-right: 0.28rem;
+
+        a {
+            width: .5rem;
+            height: 100%;
+            color: #fff;
+            display: inline-block;
+        }
+
+        .index {
+            background: url('~@static/img/icon_home.png') no-repeat 50%;
+            background-size: 100%;
+        }
+
+        .bookshelf {
+            background: url('~@static/img/page.png') no-repeat 50%;
+            background-size: 100%;
+        }
+    }
+}

@@ -22,18 +22,18 @@
             }
             a:nth-child(1){
                 i{
-                    background: url(../../../public/images/nav01.png) no-repeat;
+                    background: url('/src/static/img/nav01.png') no-repeat;
                     background-size: cover;
                 }
             }
             a:nth-child(2){
                 i{
-                    background: url(../../../public/images/nav02.png) no-repeat;
+                    background: url(/src/static/img/nav02.png) no-repeat;
                     background-size: cover;
                 }
             } a:nth-child(3){
                 i{
-                    background: url(../../../public/images/nav03.png) no-repeat;
+                    background: url(/src/static/img/nav03.png) no-repeat;
                     background-size: cover;
                 }
             }
@@ -97,39 +97,39 @@
         }
     }
     :global(.iconPic1){
-        background: url(../../../public/images/rq.png) no-repeat;
+        background: url(/src/static/img/rq.png) no-repeat;
         background-size: cover;
     }
     :global(.iconPic2){
-        background: url(../../../public/images/df.png) no-repeat;
+        background: url(/src/static/img/df.png) no-repeat;
         background-size: cover;
     }
     :global(.iconPic3){
-        background: url(../../../public/images/rx.png) no-repeat;
+        background: url(/src/static/img/rx.png) no-repeat;
         background-size: cover;
     }
     :global(.iconPic4){
-        background: url(../../../public/images/wj.png) no-repeat;
+        background: url(/src/static/img/wj.png) no-repeat;
         background-size: cover;
     }
     :global(.iconPic5){
-        background: url(../../../public/images/sn.png) no-repeat;
+        background: url(/src/static/img/sn.png) no-repeat;
         background-size: cover;
     }
     :global(.iconPic6){
-        background: url(../../../public/images/ql.png) no-repeat;
+        background: url(/src/static/img/ql.png) no-repeat;
         background-size: cover;
     }
     :global(.iconPic7){
-        background: url(../../../public/images/qk.png) no-repeat;
+        background: url(/src/static/img/qk.png) no-repeat;
         background-size: cover;
     }
     :global(.iconPic8){
-        background: url(../../../public/images/vip.png) no-repeat;
+        background: url(/src/static/img/vip.png) no-repeat;
         background-size: cover;
     }
     :global(.iconPic9){
-        background: url(../../../public/images/bx.png) no-repeat;
+        background: url(/src/static/img/bx.png) no-repeat;
         background-size: cover;
     }
        
