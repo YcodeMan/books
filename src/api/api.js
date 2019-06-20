@@ -29,5 +29,16 @@ export const getTitleClass = () => http(
  */
 export const getBookDetail = () => http(
     'get',
-    '/book/57206c3539a913ad65d35c7b'
+    '/book/548d9c17eb0337ee6df738f5'
+) 
+
+/**
+ * 用途： 获取书本评论
+ * book: 书本id
+ * limit 数据条数
+ */
+export const getBookComment = () => http(
+    'get',
+    '/post/review/best-by-book',
+    { book: '5b335b9296db9d2c6f3db6de', limit: 10}
 ) 

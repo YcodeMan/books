@@ -1,11 +1,13 @@
 import {fetch as fetchPolyfill} from 'whatwg-fetch'
+import qs from 'qs'
 
 
   const http = (method, url, data) => {
     if (method == 'get') {
         let str = ''
         for (let key in data) {
-            str = ('&' + key + '=' + data[key])
+            str += ('&' + key + '=' + data[key])
+           
         }
         url = (url + '?' + str.slice(1))
         return fetchPolyfill(url)
@@ -18,7 +20,7 @@ import {fetch as fetchPolyfill} from 'whatwg-fetch'
     } else {
         return fetchPolyfill(url, {
             method: 'post',
-            body: JSON.stringify(data)
+            body: qs.stringify(data)
         }).then(res => {
             if (res.status != 200) {
                 console.log('请求错误' + res.msg);

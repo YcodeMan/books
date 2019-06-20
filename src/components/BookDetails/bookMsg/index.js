@@ -17,7 +17,7 @@ class BookMsg extends Component {
         return (
             <Fragment>
                 <div className='book'>
-                    <img src={bookDetail.getIn(['cover'])} />
+                    <img src={ bookDetail.getIn(['Img'])} />
                     <div>
                         <h3>{bookDetail.getIn(['title'])}</h3>
                         <p>
@@ -54,7 +54,7 @@ class BookMsg extends Component {
         )
     }
     componentWillMount() {
-        // console.log(this.props)
+        
         this.props.getBookDetails()
     }
 }

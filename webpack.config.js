@@ -88,14 +88,22 @@ module.exports = {
     },
     devServer: {
         hot: true,
+        
         proxy: {
+            '/avatar': {
+                target: 'http://statics.zhuishushenqi.com',
+                changeOrigin: true,
+
+            },
             '/': {
-                target: 'http://api.zhuishushenqi.com'
+                target: 'http://api.zhuishushenqi.com',
+                changeOrigin: true,
             },
             'ranking': {
-                target: 'http://api.zhuishushenqi.com'
+                target: 'http://api.zhuishushenqi.com',
+                changeOrigin: true,
             },
-            
+           
         }
     }
 }
