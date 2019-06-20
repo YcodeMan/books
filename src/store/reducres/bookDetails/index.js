@@ -8,10 +8,7 @@ const defaultState = immutable.fromJS({
 })
 
 export default (state=defaultState, action) => {
-<<<<<<< HEAD
     
-=======
->>>>>>> wea
    switch(action.type) {
         case getBookDetailsType:
              return state.updateIn(['bookDetail'], val => val = immutable.fromJS(action.value))

@@ -29,7 +29,6 @@ export const getTitleClass = () => http(
  */
 export const getBookDetail = () => http(
     'get',
-<<<<<<< HEAD
     '/book/548d9c17eb0337ee6df738f5'
 ) 
 
@@ -57,9 +56,7 @@ export const getCategory = () => http(
     'get',
     '/cats/lv2/statistics'
 )
-=======
-    '/book/57206c3539a913ad65d35c7b'
-) 
+ 
 
 /**
  * 用途： 获取都市类连载所有书籍
@@ -110,4 +107,3 @@ export const getGfinishingBooks = () => http(
     '/book/by-categories?gender=male&type=over&major=武侠&minor=&start=0&limit=20'
 )
 
->>>>>>> wea

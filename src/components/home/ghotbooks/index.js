@@ -4,8 +4,6 @@ import {connect} from 'react-redux'
 import BookContentCommon from '@common/bookList'
 import {actiongetGhotBooks} from '@actions/home/actionCreator'
 
-
-
 class GirHotBooks extends Component{
     constructor(){
         super()
