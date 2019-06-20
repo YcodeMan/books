@@ -11,11 +11,22 @@ class Category extends React.Component {
         this.props.getData();
     }
     render() {
-        console.log(this.props)
+        let {data} = this.props
         return (
             <div>
                 <PageHeader />
-                <CategoryUI/>
+                   {/* { Object.keys(data).forEach( item => {
+                        console.log(item,data[item])
+                        let arr = data[item];
+
+                        // if (item == 'male') {//title='男生'
+                        // console.log(111);
+                        //     return <a>hhh</a>
+                        // }
+                        item == 'male'?<a>hhh</a>:''
+                            
+                    })} */}
+                <CategoryUI data={data}/>
                 <PageFooter />
             </div>
         )
@@ -23,11 +34,13 @@ class Category extends React.Component {
 }
 
 const mapStateToProprs = state => ({
-    data: state.getIn(['category'])
+    data: state.getIn(['category','category']).toJS(),
 })
 
 const mapDispatchToProps = dispatch=> ({
-    getData: () => dispatch(actionCategory())
+    getData: () => {
+        dispatch(actionCategory())
+    }
 })
 
 export default connect(mapStateToProprs,mapDispatchToProps)(Category)
