@@ -30,7 +30,6 @@ export const getTitleClass = () => http(
  */
 export const getBookDetail = () => http(
     'get',
-<<<<<<< HEAD
     '/book/548d9c17eb0337ee6df738f5'
 ) 
 
@@ -44,9 +43,7 @@ export const getBookComment = () => http(
     '/post/review/best-by-book',
     { book: '5b335b9296db9d2c6f3db6de', limit: 10}
 ) 
-=======
-    '/book/57206c3539a913ad65d35c7b'
-) 
+    
 
 
 /**
@@ -60,4 +57,3 @@ export const getCategory = () => http(
     'get',
     '/cats/lv2/statistics'
 )
->>>>>>> e7665ec2bc3784dbaeeedd06a13ae93a014dc21b
