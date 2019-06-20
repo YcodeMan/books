@@ -9,29 +9,65 @@ export default class CategoryUI extends Component {
         return (
             <Fragment>
                 {
-                    Object.keys(data).map((item, value) => (
-                        < section >
-                            <h4>
-                                {
-                                    item == 'male' ? '男生' :
-                                        item == 'female' ? '女生' :
-                                            item == 'picture' ? '漫画' :
-                                                item == 'press' ? '出版' : ''
-                                }
-                            </h4>
-                            <nav className={style.categoryList}>
-                                <a href="/category/玄幻?gender=male"
-                                    data-hybrid-params="{&quot;jumpType&quot;:&quot;webview&quot;,&quot;title&quot;:&quot;玄幻&quot;,&quot;pageType&quot;:&quot;categoryDetail&quot;,&quot;code&quot;:&quot;6001 &quot;}">
-                                    <span className={style.name}>玄幻</span>
-                                    <span className={style.count}>578677</span>
-                                </a>
-                            </nav>
-                        </section >
-                    ))
-
+                    Object.keys(data).map(items =>
+                        items == 'male' ?
+                            < section key={items}>
+                                <h4>男生</h4>
+                                <nav className={style.categoryList}>
+                                    {
+                                        data[items].map((item, index) =>
+                                            <a href="/category/玄幻?gender=male" key={index}>
+                                                <span className={style.name}>{item.name}</span>
+                                                <span className={style.count}>{item.bookCount}</span>
+                                            </a>
+                                        )
+                                    }
+                                </nav>
+                            </section >
+                            : items == 'female' ?
+                                < section key={items}>
+                                    <h4>女生</h4>
+                                    <nav className={style.categoryList}>
+                                        {
+                                            data[items].map((item, index) =>
+                                                <a href="/category/玄幻?gender=male" key={index}>
+                                                    <span className={style.name}>{item.name}</span>
+                                                    <span className={style.count}>{item.bookCount}</span>
+                                                </a>
+                                            )
+                                        }
+                                    </nav>
+                                </section >
+                                : items == 'picture' ?
+                                    < section key={items}>
+                                        <h4>漫画</h4>
+                                        <nav className={style.categoryList}>
+                                            {
+                                                data[items].map((item, index) =>
+                                                    <a href="/category/玄幻?gender=male" key={index}>
+                                                        <span className={style.name}>{item.name}</span>
+                                                        <span className={style.count}>{item.bookCount}</span>
+                                                    </a>
+                                                )
+                                            }
+                                        </nav>
+                                    </section >
+                                    : items == 'press' ?
+                                        < section key={items}>
+                                            <h4>出版</h4>
+                                            <nav className={style.categoryList}>
+                                                {
+                                                    data[items].map((item, index) =>
+                                                        <a href="/category/玄幻?gender=male" key={index}>
+                                                            <span className={style.name}>{item.name}</span>
+                                                            <span className={style.count}>{item.bookCount}</span>
+                                                        </a>
+                                                    )
+                                                }
+                                            </nav>
+                                        </section >
+                                        : '')
                 }
-
-
             </Fragment>
         )
     }
