@@ -1,6 +1,7 @@
 import {getBookDetail,getBookComment} from '@api/api'
 import {getBookDetailsType, getBookCommentType} from './actionType'
-
+import timeDiff from '@filters/timeDiff'
+ 
 export const actionGetBookDetail = () => 
     async dispatch => {
         let data = await getBookDetail()
@@ -18,7 +19,9 @@ export const actionGetBookDetail = () =>
 export const actionGetBookComment = () => 
     async dispatch => {
         let data = await getBookComment()
-        console.log(data, '34ddadsfsadfas235')
+        data.reviews.map((item) =>{
+           item.timeDiff = timeDiff(item.updated, new Date)
+        })
         dispatch({
             type: getBookCommentType,
             value: data

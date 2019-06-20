@@ -62,6 +62,8 @@ module.exports = {
                     }
                 }
             },
+            // { test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, 
+            //     loader: 'url-loader?limit=50000&name=[path][name].[ext]'},
         ]
     },
     plugins: [
@@ -82,7 +84,9 @@ module.exports = {
             '@api': path.join(__dirname, 'src/api'),
             '@router': path.join(__dirname, 'src/router'),
             '@actions': path.join(__dirname, 'src/store/actions'),
-            '@public': path.join(__dirname, 'public')
+            '@public': path.join(__dirname, 'public'),
+            '@filters': path.join(__dirname, 'src/filters')
+
 
         }
     },

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, {Fragment} from 'react'
 import styled from './index.scss'
 import {connect} from 'react-redux'
 const bookIntorduction = ({bookDetail}) => {

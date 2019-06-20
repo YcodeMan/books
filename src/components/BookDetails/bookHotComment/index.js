@@ -2,8 +2,8 @@ import React, { Fragment, useEffect } from 'react'
 import { connect } from 'react-redux'
 import styled from './index.scss'
 import { actionGetBookComment } from '@actions/bookDetails/actionCreator'
-const bookHotComment = ({ commentList, getBookComment, showComment }) => {
-    console.log(showComment, 'daga')
+const bookHotComment = ({ getBookComment, showComment }) => {
+    let arr = []
     useEffect(() => {
         getBookComment()
     }, [])
@@ -16,8 +16,11 @@ const bookHotComment = ({ commentList, getBookComment, showComment }) => {
             <ul> 
                 {
                     showComment.map((key, val ) =>  {
-
-                        console.log('key', key, '---')
+                        // 重新设置数组
+                        arr.length = key.getIn(['rating'])  
+                        for(let i =0 ; i < key.getIn(['rating']); i++) {
+                             arr.push(i)
+                        }
                 return  <li key={key}>
                             <a className="coment_list">
                                 <img src={key.getIn(["author","avatar"])}/>
@@ -25,18 +28,18 @@ const bookHotComment = ({ commentList, getBookComment, showComment }) => {
                                     <p className="name">{key.getIn(["author","nickname"])}</p>
                                     <p className="title">{key.getIn(['title'])}</p>
                                     <p className="score">
-                                        <i className="star-full"></i>
-                                        <i className="star-full"></i>
-                                        <i className="star-full"></i>
-                                        <i className="star-full"></i>
-                                        <i className="star-full"></i>
+                                        {
+                                            arr.map((item, index) => { 
+                                                return  <i key={index} className="star-full"></i>
+                                            })
+                                        }
                                     </p>
                                     <p className="content">
                                     {key.getIn(['content'])}  
                                </p>
                                     <p className="love">
-                                        <span>5小时前</span>
-                                        <span>{key.getIn(["helpful","yes"])}觉得有用</span>
+                                        <span>{key.getIn(['timeDiff'])}前</span>
+                                        <span>{key.getIn(["helpful","yes"])}人觉得有用</span>
                                     </p>
                                 </div>
 
@@ -56,7 +59,6 @@ const bookHotComment = ({ commentList, getBookComment, showComment }) => {
 }
 
 const mapStateToProps = (state) => ({
-    commentList: state.getIn(['bookDetails', 'commentList']),
     showComment: state.getIn(['bookDetails', 'showComment'])
 })
 

@@ -4,7 +4,10 @@ import styled from './index.scss'
 
 import BookIntorduction from '@components/BookDetails/bookIntroduction'
 import BookHotComment from '@components/BookDetails/bookHotComment'
+import BookMore from '@components/BookDetails/bookMore'
+
 import {actionGetBookDetail} from '@actions/bookDetails/actionCreator'
+
 
 class BookMsg extends Component {
     constructor() {
@@ -13,7 +16,6 @@ class BookMsg extends Component {
     }
     render() {
         let {bookDetail} = this.props
-        console.log(bookDetail)
         return (
             <Fragment>
                 <div className='book'>
@@ -50,6 +52,7 @@ class BookMsg extends Component {
                 </div>
                 <BookIntorduction/>
                 <BookHotComment/>
+                <BookMore/>
             </Fragment>
         )
     }

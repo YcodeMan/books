@@ -20,7 +20,7 @@
         font-size: 12px;
     }
     :global(.title){
-        padding: .1rem 0;
+        padding: .06rem 0;
         font-weight: 700;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -28,6 +28,7 @@
         color: #000;
     }
     :global(.score){
+        margin-bottom: .1rem;
         i {
             display: inline-block;
             vertical-align: middle;
