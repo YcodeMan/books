@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom'
 import Router from '@router'
 import "@static/css/reset.css"
 import "@static/js/flexble.js"
-// import "@public/css/reset.css"
-// import "@public/js/flexble.js"
 import store from '@store'
 import {Provider} from 'react-redux'
 

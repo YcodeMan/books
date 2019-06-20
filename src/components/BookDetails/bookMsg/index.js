@@ -4,7 +4,10 @@ import styled from './index.scss'
 
 import BookIntorduction from '@components/BookDetails/bookIntroduction'
 import BookHotComment from '@components/BookDetails/bookHotComment'
+import BookMore from '@components/BookDetails/bookMore'
+
 import {actionGetBookDetail} from '@actions/bookDetails/actionCreator'
+
 
 class BookMsg extends Component {
     constructor() {
@@ -13,11 +16,10 @@ class BookMsg extends Component {
     }
     render() {
         let {bookDetail} = this.props
-        console.log(bookDetail)
         return (
             <Fragment>
                 <div className='book'>
-                    <img src={bookDetail.getIn(['cover'])} />
+                    <img src={ bookDetail.getIn(['Img'])} />
                     <div>
                         <h3>{bookDetail.getIn(['title'])}</h3>
                         <p>
@@ -50,11 +52,12 @@ class BookMsg extends Component {
                 </div>
                 <BookIntorduction/>
                 <BookHotComment/>
+                <BookMore/>
             </Fragment>
         )
     }
     componentWillMount() {
-        // console.log(this.props)
+        
         this.props.getBookDetails()
     }
 }

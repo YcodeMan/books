@@ -1,25 +1,57 @@
-import React, { Component } from 'react';
+import React, { Component ,Fragment} from 'react';
+
 import "./index.scss"
 
-export default class BookList extends Component{
+ const BookList =  (Warpper) => 
+ class  extends Component{
+    constructor(props){
+        super(props)
+    }
     render(){
-        return(
-            <div className="booklist">
-                <a href="#" className="booklistinfo">
-                    <img className="bookpic" src="../../../public/images/book.png"/>
-                    <div className="bookcontent">
-                        <h3>身有千千劫&nbsp;<span>完结</span></h3>
-                        <p className="bookmsg">认识白芊芊的人都知道，她爱墨沉渊，爱到1点自尊都没有！所有人都以为她嫁给了墨沉渊
-                            ，是念念不忘必有回响的结果。殊不知，他娶她，是为了1步1步将她逼进见不到低的深渊！
-                            直到，她想放弃他的时候，他画地为牢，将她死死地束缚在深情里！
-                        </p>
-                        <p className="bookkinds">
-                            <span>都市生活 &nbsp;|&nbsp;<b>16</b>人气</span>
-                            <i>现代言情</i>
-                        </p>
-                    </div>
-                </a>
-            </div>
+        return( 
+                <Warpper msg={this.props.val}/>
         )
     }
 }
+class bookContentCommon extends Component{
+    constructor(props) {
+        super(props)
+    }
+
+    render() {
+        let {msg} = this.props 
+        msg =   msg === undefined ? [] : msg
+        let newMsg = msg.slice(0,4)
+        
+        return(
+            <Fragment>
+                 <div className="booklist">
+                {
+                    newMsg.map((item, index) => (
+                            item.cover = decodeURIComponent(item.getIn(["cover"])).replace('/agent/', ""),
+                            <a href="#" className="booklistinfo" key={index}>
+                                <img className="bookpic" src={item.cover}/>
+                                <div className="bookcontent">
+                                    <h3>
+                                        {item.getIn(['title'])}&nbsp;
+                                        <span className={item.getIn(["allowMonthly"]) ? 'goon' : 'finish'}>{
+                                            item.getIn(["allowMonthly"])? "连载":"完结"
+                                        }</span>
+                                    </h3>
+                                    <p className="bookmsg">{item.getIn(['shortIntro'])}</p>
+                                    <p className="bookkinds">
+                                        <span>{item.getIn(["majorCate"])} &nbsp;|&nbsp;<b>{item.getIn(["latelyFollower"])}</b>人气</span>
+                                        <i>{item.getIn(['minorCate'])}</i>
+                                    </p>
+                                </div>
+                            </a>
+                        )
+                    ) 
+                }
+              </div>
+            </Fragment>
+        )
+    }
+}
+
+export default  BookList(bookContentCommon)

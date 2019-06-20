@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import "./index.scss"
+import LOGO from "@static/img/logo.png"
 
 export default class IndexHeader extends Component{
     render(){
         return(
             <div className="header">
                 <div className="indexheader">
-                    <img src="../../../public/images/logo.png"/>
+                    <img src={LOGO}/>
                     <div className="sex">
                         <a href="#">男生</a>
                         <a href="#">女生</a>

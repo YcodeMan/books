@@ -51,6 +51,10 @@ module.exports = {
                 use: 'react-hot-loader/webpack',
                 include: /node_modules/
             },
+            // { 
+            //     test: /\.(png|woff|woff2|eot|ttf|svg)$/, 
+            //     loader: 'url-loader'
+            // }
             {
                 test:/\.(jpg|png|gif)$/,
                 use:{
@@ -62,6 +66,8 @@ module.exports = {
                     }
                 }
             },
+            // { test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, 
+            //     loader: 'url-loader?limit=50000&name=[path][name].[ext]'},
         ]
     },
     plugins: [
@@ -83,11 +89,19 @@ module.exports = {
             '@router': path.join(__dirname, 'src/router'),
             '@static': path.join(__dirname, 'src/static'),
             '@actions': path.join(__dirname, 'src/store/actions'),
+            '@public': path.join(__dirname, 'public'),
+            '@filters': path.join(__dirname, 'src/filters')
         }
     },
     devServer: {
         hot: true,
+        
         proxy: {
+            '/avatar': {
+                target: 'http://statics.zhuishushenqi.com',
+                changeOrigin: true,
+
+            },
             'ranking': {
                 target: 'http://api.zhuishushenqi.com',
                 changeOrigin: true
