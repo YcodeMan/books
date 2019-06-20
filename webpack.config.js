@@ -91,8 +91,6 @@ module.exports = {
             '@actions': path.join(__dirname, 'src/store/actions'),
             '@public': path.join(__dirname, 'public'),
             '@filters': path.join(__dirname, 'src/filters')
-
-
         }
     },
     devServer: {

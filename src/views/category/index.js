@@ -9,13 +9,19 @@ class Category extends React.Component {
     constructor(porps) {
         super(porps)
         this.props.getData();
+        this.state = {
+            head: {
+                title: '分类'
+            }
+        }
     }
     render() {
-        console.log(this.props)
+        let {data} = this.props
+        let {head} = this.state
         return (
             <div>
-                <PageHeader />
-                <CategoryUI/>
+                <PageHeader data={head}/>
+                <CategoryUI data={data}/>
                 <PageFooter />
             </div>
         )
@@ -23,11 +29,13 @@ class Category extends React.Component {
 }
 
 const mapStateToProprs = state => ({
-    data: state.getIn(['category'])
+    data: state.getIn(['category','category']).toJS(),
 })
 
 const mapDispatchToProps = dispatch=> ({
-    getData: () => dispatch(actionCategory())
+    getData: () => {
+        dispatch(actionCategory())
+    }
 })
 
 export default connect(mapStateToProprs,mapDispatchToProps)(Category)
