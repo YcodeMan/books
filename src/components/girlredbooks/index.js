@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import "./index.scss"
 import BookList from "../../common/bookList"
 
-
-
 export default class GirlRedBooks extends Component{
+ 
     render(){
         return(
             <div className="girlredbooks">
