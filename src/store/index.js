@@ -1,10 +1,12 @@
 import {createStore, applyMiddleware} from 'redux'
-import reducer from './reducer'
-import reduxPromise from 'redux-thunk'
+import reducers from './reducres'
 import {combineReducers} from 'redux-immutable'
+import thunk from 'redux-thunk';
+
+const reducer = combineReducers(reducers)
 
 
-const reducer = combineReducers({
-    category
-})
-const store = createStore(reducer, applyMiddleware(reduxPromise))
+const store = createStore(reducer, applyMiddleware(thunk))
+
+
+export default store

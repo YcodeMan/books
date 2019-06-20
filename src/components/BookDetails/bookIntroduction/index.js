@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from 'react'
 import styled from './index.scss'
-
-export default () => {
+import {connect} from 'react-redux'
+const bookIntorduction = (props) => {
+    console.log(this, props )
+    let introduction = props ?  '' : ''
     return (
         <Fragment>
             <div className='introduction'>
@@ -27,3 +29,14 @@ export default () => {
     )
 }
 
+const mapStateToProps = (state) => ({
+    bookDetail: state.getIn(['bookDetails', 'bookDetail'])
+})
+   
+
+
+const mapDispatchToProps = (dispatch) => ({
+    
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(bookIntorduction)

@@ -1,15 +1,15 @@
-.girlnicebooks{
+:global(.girlnicebooks){
     width: 100%;
     border-top: 0.15rem solid #ddd;
-    .title{
+    :global(.title){
         h3{
-            font-size: 0.26rem;
+            font-size: 0.3rem;
             padding-left: 0.3rem;
             border-left: 3px solid #b93321;
             margin-top: 0.15rem;
         }
     }
-    .kindslist{
+    :global(.kindslist){
         margin-top: 0.15rem;
         padding: 0 0.7rem;
         display: flex;
@@ -33,7 +33,7 @@
             background-color: #e78f8f;
         }
     }
-    .sublist{
+    :global(.sublist){
         padding: 0.2rem;
         border-bottom: 1px solid #ddd;
         h4{
@@ -64,7 +64,7 @@
             padding-top: 0.08rem;
         }
     }
-    .loadmore{
+    :global(.loadmore){
         a{
             display: block;
             margin: 0 0.3rem;

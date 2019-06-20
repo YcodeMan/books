@@ -16,7 +16,7 @@
             .searchIcon {
                 width: .6rem;
                 height: .6rem;
-                background: url('/src/static/img/search.png') no-repeat;
+                background: url('~@static/img/search.png') no-repeat;
                 background-size: 50%;
                 background-position: 50%;
             }
@@ -31,7 +31,6 @@
             display: inline-block;
             padding-left: .1rem;
             button {
-                width: 90%;
                 height: .6rem;
                 border-radius: 2px;
                 border: 1px solid #ebebeb;

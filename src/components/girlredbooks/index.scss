@@ -1,15 +1,15 @@
-.girlredbooks{
+:global(.girlredbooks){
     width: 100%;
     border-top: 0.15rem solid #ddd;
-    .title{
+    :global(.title){
         h3{
-            font-size: 0.26rem;
+            font-size: 0.3rem;
             padding-left: 0.3rem;
             border-left: 3px solid #b93321;
             margin-top: 0.15rem;
         }
     }
-    .loadmore{
+    :global(.loadmore){
         a{
             display: block;
             margin: 0 0.3rem;

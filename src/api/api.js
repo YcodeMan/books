@@ -13,7 +13,7 @@ export const getCrunchies = () => http(
 )
 
 /**
- * 用途： 获取文章的类别
+ * 用途： 获取文章的类别下的小分类
  *  @param method  
  *  @param url
  *  @param data
@@ -32,3 +32,16 @@ export const getBookDetail = () => http(
     'get',
     '/book/57206c3539a913ad65d35c7b'
 ) 
+
+
+/**
+ * 用途： 获取所有类别
+ *  @param method  
+ *  @param url
+ *  @param data
+ *  @return example  "male":[{"name":"玄幻","bookCount":578792,"monthlyCount":22549,"icon":"/icon/玄幻_.png"
+ */
+export const getCategory = () => http(
+    'get',
+    '/cats/lv2/statistics'
+)

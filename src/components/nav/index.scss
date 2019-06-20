@@ -1,12 +1,12 @@
-.indexnav{
+:global(.indexnav){
     width: 100%;
-    .nav{
+    :global(.nav){
         width: 100%;
         padding: 0.25rem 0.2rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        .navlist{
+        :global(.navlist){
             flex: 25%;
             display: flex;
             flex-direction: column;
@@ -23,30 +23,30 @@
         }
         a:nth-child(1){
             i{
-                background: url(../../../public/images/icon1.png) no-repeat;
+                background: url(/src/static/img/icon1.png) no-repeat;
                 background-size: cover;
             }
         }
         a:nth-child(2){
             i{
-                background: url(../../../public/images/icon2.png) no-repeat;
+                background: url(/src/static/img/icon2.png) no-repeat;
                 background-size: cover;
             }
         }
         a:nth-child(3){
             i{
-                background: url(../../../public/images/icon3.png) no-repeat;
+                background: url(/src/static/img/icon3.png) no-repeat;
                 background-size: cover;
             }
         }
         a:nth-child(4){
             i{
-                background: url(../../../public/images/icon4.png) no-repeat;
+                background: url(/src/static/img/icon4.png) no-repeat;
                 background-size: cover;
             }
         }
     }
-    .recoder{
+    :global(.recoder){
         padding: 0.2rem 0.3rem;
         a{
             padding: 0.2rem 0;
@@ -54,13 +54,13 @@
                 padding: 0 0.2rem;
             }
         }
-        .history{
+        :global(.history){
             color: #999;
             span{
                 border-right: 1px solid #999;
             }
         }
-        .read{
+        :global(.read){
             color: #da6161;
         }
     }

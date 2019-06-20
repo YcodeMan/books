@@ -1,156 +1,27 @@
-body,
-html {
-    overflow-y: auto;
-    margin: 0;
-    padding: 0;
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+
+fieldset, c{ border:none; }
+
+img{display: block;}
+
+address, caption, cite, code, dfn, th, var { font-style:normal; font-weight:normal; }
+
+ul, ol ,li{ list-style:none; }
+
+body { color:#333; }
+
+a { color:#666; text-decoration:none; }
+/*清除浮动*/
+.clear{clear:both}
+*{box-sizing:border-box}
+body,html{
     height: 100%;
 }
-
-html *,
-html :after,
-html :before {
-    box-sizing: border-box;
-}
-
-body,
-button,
-input,
-select,
-textarea {
-    font-family: PingFang SC, Helvetica Neue, Helvetica, STHeiTi, sans-serif !important
-}
-
-article,
-aside,
-blockquote,
-body,
-button,
-code,
-dd,
-details,
-dl,
-dt,
-fieldset,
-figcaption,
-figure,
-footer,
-form,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-header,
-hr,
-input,
-legend,
-li,
-menu,
-nav,
-ol,
-p,
-pre,
-section,
-span,
-td,
-textarea,
-th,
-ul {
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    font-size: 0.24rem
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-menu,
-nav,
-section {
-    display: block
-}
-
-audio,
-canvas,
-video {
-    display: inline-block
-}
-
-body,
-button,
-input,
-select,
-textarea {
-    font-family: PingFang SC, Helvetica Neue, Helvetica, STHeiTi, sans-serif;
-    color: #222;
-    font-weight: 400;
-    line-height: 1
-}
-
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-    padding: 0;
-    border: 0
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0
-}
-
-fieldset,
-img {
-    border: 0
-}
-
-img {
-    max-width: 100%;
-    border: none;
-    display: block;
-}
-
-ol,
-ul {
-    list-style: none
-}
-
-a,
-ins {
-    text-decoration: none;
-    color: #666;
-}
-
-fieldset {
-    border: none;
-}
-
-address,
-caption,
-cite,
-code,
-dfn,
-th,
-var {
-    font-style: normal;
-    font-weight: normal;
-}
-
-
-body {
-    color: #333;
-}
-
-/*清除浮动*/
-.clear {
-    clear: both
-}
-
 i {
     font-style: normal;
 }
+
+
+

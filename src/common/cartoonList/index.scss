@@ -1,7 +1,7 @@
-.cartoonList{
+:global(.cartoonList){
   
     width: 100%;
-    .contenList{
+    :global(.contenList){
         width: 100%;
         display: flex;
         flex-wrap: wrap;

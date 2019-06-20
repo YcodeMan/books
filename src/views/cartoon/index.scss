@@ -1,8 +1,8 @@
-.cartoon{
+:global(.cartoon){
     // 卡通页面导航栏
-    .cartoonNav{
+    :global(.cartoonNav){
         width: 100%;
-        .nav{
+        :global(.nav){
             padding: 0 0.4rem;
             display: flex;
             justify-content: space-between;
@@ -22,33 +22,33 @@
             }
             a:nth-child(1){
                 i{
-                    background: url(../../../public/images/nav01.png) no-repeat;
+                    background: url('/src/static/img/nav01.png') no-repeat;
                     background-size: cover;
                 }
             }
             a:nth-child(2){
                 i{
-                    background: url(../../../public/images/nav02.png) no-repeat;
+                    background: url(/src/static/img/nav02.png) no-repeat;
                     background-size: cover;
                 }
             } a:nth-child(3){
                 i{
-                    background: url(../../../public/images/nav03.png) no-repeat;
+                    background: url(/src/static/img/nav03.png) no-repeat;
                     background-size: cover;
                 }
             }
         }
     }
     // 人气栏title和其他栏title共用
-    .personHot{
+    :global(.personHot){
         border-top: 0.2rem solid #f4f4f4;
         width: 100%;
-        .title{
+        :global(.title){
             padding:0.2rem;
             display: flex;
             justify-content: space-between;
             
-            .titleLeft{
+            :global(.titleLeft){
                 display: flex;
                 align-items: center;
                
@@ -62,7 +62,7 @@
                     height: 0.5rem;
                 }
             }
-            .titleRight{
+            :global(.titleRight){
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -81,8 +81,8 @@
               }
             }
         }
-        .firstBig{
-            .bigbanner{
+        :global(.firstBig){
+            :global(.bigbanner){
                 width: 100%;
                 height: 3.6rem;
             }
@@ -96,40 +96,40 @@
             }
         }
     }
-    .iconPic1{
-        background: url(../../../public/images/rq.png) no-repeat;
+    :global(.iconPic1){
+        background: url(/src/static/img/rq.png) no-repeat;
         background-size: cover;
     }
-    .iconPic2{
-        background: url(../../../public/images/df.png) no-repeat;
+    :global(.iconPic2){
+        background: url(/src/static/img/df.png) no-repeat;
         background-size: cover;
     }
-    .iconPic3{
-        background: url(../../../public/images/rx.png) no-repeat;
+    :global(.iconPic3){
+        background: url(/src/static/img/rx.png) no-repeat;
         background-size: cover;
     }
-    .iconPic4{
-        background: url(../../../public/images/wj.png) no-repeat;
+    :global(.iconPic4){
+        background: url(/src/static/img/wj.png) no-repeat;
         background-size: cover;
     }
-    .iconPic5{
-        background: url(../../../public/images/sn.png) no-repeat;
+    :global(.iconPic5){
+        background: url(/src/static/img/sn.png) no-repeat;
         background-size: cover;
     }
-    .iconPic6{
-        background: url(../../../public/images/ql.png) no-repeat;
+    :global(.iconPic6){
+        background: url(/src/static/img/ql.png) no-repeat;
         background-size: cover;
     }
-    .iconPic7{
-        background: url(../../../public/images/qk.png) no-repeat;
+    :global(.iconPic7){
+        background: url(/src/static/img/qk.png) no-repeat;
         background-size: cover;
     }
-    .iconPic8{
-        background: url(../../../public/images/vip.png) no-repeat;
+    :global(.iconPic8){
+        background: url(/src/static/img/vip.png) no-repeat;
         background-size: cover;
     }
-    .iconPic9{
-        background: url(../../../public/images/bx.png) no-repeat;
+    :global(.iconPic9){
+        background: url(/src/static/img/bx.png) no-repeat;
         background-size: cover;
     }
        

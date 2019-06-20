@@ -9,7 +9,7 @@ export default class BoyFinishBooks extends Component{
         return(
             <div className="boyfinishbooks">
                 <div className="title">
-                    <h3>女生佳作</h3>
+                    <h3>男生完本</h3>
                 </div>
                 <div className="kindslist">
                     <a href="#">都市</a>
@@ -18,7 +18,7 @@ export default class BoyFinishBooks extends Component{
                     <a href="#">科幻</a>
                 </div>
                 <BookList/>
-                <div class="sublist">
+                <div className="sublist">
                     <h4>
                         <i>现代言情</i>
                         <span>隐婚深爱，前妻不好追</span>

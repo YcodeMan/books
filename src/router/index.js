@@ -1,10 +1,11 @@
 import React,{Component} from 'react'
 import {HashRouter as Router, Route, Redirect,Switch} from 'react-router-dom'
 import AsyncComponent from '@common/asyncComponent'
-import Home from '@views/Home'
+import Home from '@views/home'
 import Login from '@views/login'
 import BookShelf from '@views/bookShelf';
 import Category from '@views/category';
+import Cartoon from '@views/cartoon'
 
 
 const BookDetails  = AsyncComponent(() => import('@views/BookDetails'))
@@ -15,14 +16,16 @@ export default class RouterConfig extends Component{
         return(
             <Router>
                 <Switch>
-                    <Route path='/' exact component={BookDetails} />
                     <Route path='/home' exact component={Home} />
+                    <Route path='/' exact component={Category} />
                     <Route path='/bookDetails' exact component={BookDetails} />
                     <Route path='/login' exact component={Login} />
                     <Route path='/mybooks' exact component={BookShelf} />
                     <Route path='/bookHistory' exact component={BookShelf} />
                     <Route path='/category' exact component={Category} />
+                    <Route path='/cartoon' exact component={Cartoon} />
                     <Redirect to='/' />
+
                 </Switch>
             </Router>
         )

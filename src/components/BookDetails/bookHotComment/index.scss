@@ -1,0 +1,57 @@
+
+:global(.hotComment) {
+    padding: 0 .5rem;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: .4rem;
+}
+:global(.coment_list) {
+    padding: 0 .5rem;
+    display: flex;
+    img {
+        display: inline-block;
+        width: .9rem;
+        height: .9rem;
+        border-radius: .95rem;
+    }
+    div{
+        margin-left: .3rem;
+    }
+    :global(.name){
+        padding: .1rem 0;
+        color: #a58d5e;
+        font-size: 12px;
+    }
+    :global(.title){
+        padding: .1rem 0;
+        font-weight: 700;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        color: #000;
+    }
+    :global(.score){
+        i {
+            display: inline-block;
+            vertical-align: middle;
+            width: .32rem;
+            height: .32rem;
+            // background-image: url('/public/image/star.png');
+        }
+       
+    }
+    :global(.content){
+        overflow: hidden;
+       
+        text-overflow: ellipsis;
+        line-height: .4rem;
+        height: .8rem;
+        text-align: justify;
+    }
+    :global(.love){
+        display: flex;
+        justify-content: space-between;
+        padding-top: .1rem;
+    }
+
+}

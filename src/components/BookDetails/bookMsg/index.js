@@ -1,23 +1,33 @@
 import React, { Component, Fragment } from 'react'
+import {connect} from 'react-redux'
 import styled from './index.scss'
-import BookIntorduction from '@components/BookDetails/bookIntroduction'
 
-export default class BookMsg extends Component {
+import BookIntorduction from '@components/BookDetails/bookIntroduction'
+import BookHotComment from '@components/BookDetails/bookHotComment'
+import {actionGetBookDetail} from '@actions/bookDetails/actionCreator'
+
+class BookMsg extends Component {
+    constructor() {
+        super()
+        
+    }
     render() {
+        let {bookDetail} = this.props
+        console.log(bookDetail)
         return (
             <Fragment>
                 <div className='book'>
-                    <img src="public/image/bookImg.jpg" />
+                    <img src={bookDetail.getIn(['cover'])} />
                     <div>
-                        <h3>我想我不会再爱你</h3>
+                        <h3>{bookDetail.getIn(['title'])}</h3>
                         <p>
-                            <a className={styled.c_red}>咸移仁</a>
+                            <a className={styled.c_red}>{bookDetail.getIn(['author'])}</a>
                             <i>|</i>
-                            <span>都市生活</span>
+                            <span>{bookDetail.getIn(['cat'])}</span>
                             <i>|</i>
-                            <span>6万字</span>
+                            <span>{bookDetail.getIn(['wordAll'])}</span>
                         </p>
-                        <p>完结</p>
+                        <p>{bookDetail.getIn(['bookState'])}</p>
                     </div>
                 </div>
                 <div className='read_link'>
@@ -27,19 +37,39 @@ export default class BookMsg extends Component {
                 <div className="reader-data">
                     <p>
                         <span>追人气</span> 
-                        <i>1047</i>
+                        <i>{bookDetail.getIn(['latelyFollower'])}</i>
                     </p>
                     <p>
                         <span>读者留存率</span>
-                        <i>7.52%</i>
+                        <i>{bookDetail.getIn(['retentionRatio'])}%</i>
                     </p>
                     <p>
                         <span>日更字数/天</span> 
-                        <i>0</i>
+                        <i>{bookDetail.getIn(['serializeWordCount'])}</i>
                     </p>
                 </div>
                 <BookIntorduction/>
+                <BookHotComment/>
             </Fragment>
         )
     }
+    componentWillMount() {
+        // console.log(this.props)
+        this.props.getBookDetails()
+    }
 }
+
+
+const mapStateToProps = (state) => ({
+    bookDetail: state.getIn(['bookDetails', 'bookDetail'])
+})
+   
+
+
+const mapDispatchToProps = (dispatch) => ({
+    getBookDetails() {
+        dispatch(actionGetBookDetail())
+    }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(BookMsg)
