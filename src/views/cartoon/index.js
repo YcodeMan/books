@@ -1,10 +1,10 @@
 import React,{Component} from 'react'
 import CarToonList from "../../common/cartoonList"
 import CarToonListT from "../../common/cartoonListT"
+import PageFooter from "@common/pageFooter"
 import Swiper from 'swiper/dist/js/swiper.js'
 import 'swiper/dist/css/swiper.min.css'
 import "./index.scss"
-
 
 export default class CarToon extends Component{
     componentDidMount(){
@@ -24,16 +24,16 @@ export default class CarToon extends Component{
                 <div className="swiper-container">
                     <div className="swiper-wrapper">
                         <div className="swiper-slide">
-                            <img src="/src/static/img/manhua1.png"/>
+                            <img src="http://statics.zhuishushenqi.com/recommendPage/156032547395897"/>
                         </div>
                         <div className="swiper-slide">
-                            <img src="/src/static/img/manhua2.png"/>
+                            <img src="http://statics.zhuishushenqi.com/recommendPage/156093425599982"/>
                         </div>
                         <div className="swiper-slide">
-                            <img src="/src/static/img/manhua3.png"/>
+                            <img src="http://statics.zhuishushenqi.com/recommendPage/156093429624665"/>
                         </div>
                         <div className="swiper-slide">
-                            <img src="/src/static/img/manhua4.png"/>
+                            <img src="http://statics.zhuishushenqi.com/recommendPage/156093432990518"/>
                         </div>
                     </div>
                     <div className="swiper-pagination"></div>
@@ -82,7 +82,7 @@ export default class CarToon extends Component{
                         </a>
                     </h4>
                     <a className="firstBig">
-                        <img className="bigbanner"  src="/src/static/img/bigpic.png"/>
+                        <img className="bigbanner"  src="http://statics.zhuishushenqi.com/cover/154901345081447?imageView2/3/w/750/h/310/q/40"/>
                         <h4>拂晓的花嫁</h4>
                         <p>沉沦在你的鲜血里</p>
                     </a>
@@ -187,6 +187,7 @@ export default class CarToon extends Component{
                     </h4>
                     <CarToonListT/>
                 </div>
+                <PageFooter/>
             </div>
         )
     }

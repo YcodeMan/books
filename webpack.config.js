@@ -117,7 +117,7 @@ module.exports = {
                 target: 'http://api.zhuishushenqi.com',
                 changeOrigin: true
             },
-
+           
         }
     }
 }
