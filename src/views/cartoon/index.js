@@ -1,40 +1,56 @@
-import React,{Component} from 'react'
+import React, { Component } from 'react'
 import CarToonBookList from "@common/cartoonList"
-
-import CarToonListT from "@common/cartoonListT"
+import NewCartoonBooks from "@common/cartoonListT"
 import PageFooter from "@common/pageFooter"
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
+import PageHeader from '@common/pageHeader'
 import Swiper from 'swiper/dist/js/swiper.js'
 import 'swiper/dist/css/swiper.min.css'
 import "./index.scss"
-import {actiongetAllBooks} from '@actions/cartoon/actionCreator'
+import {
+    actiongetHotBloodBooks,
+    actiongetAllLaughBooks,
+    actiongetAllLoveBooks,
+    actiongetAllMagicBooks,
+} from '@actions/cartoon/actionCreator'
 
-class CarToon extends Component{
-    constructor(){
+class CarToon extends Component {
+    constructor() {
         super()
     }
     render() {
-        return(
-            <div className="cartoon">
-    {/* ----轮播模块----- */}
+        let { hotbloodbooks } = this.props
+        let rqbooks = hotbloodbooks.slice(5, 9)
+        let djbooks = hotbloodbooks.slice(11, 14)
+        let { laughbooks } = this.props
+        let finishbooks = laughbooks.slice(10, 16)
+        let { lovebooks } = this.props
+        let vipbooks = lovebooks.slice(14, 20)
+        let { magicbooks } = this.props
+        let newbooks = magicbooks.slice(11, 15)
+
+        return (
+            <div className="cartoon" id="cartoon">
+                <PageHeader title="漫画专区" />
+                {/* ----轮播模块----- */}
                 <div className="swiper-container">
                     <div className="swiper-wrapper">
                         <div className="swiper-slide">
-                            <img src="http://statics.zhuishushenqi.com/recommendPage/156032547395897"/>
+                            <img src="http://statics.zhuishushenqi.com/recommendPage/156032547395897" />
                         </div>
                         <div className="swiper-slide">
-                            <img src="http://statics.zhuishushenqi.com/recommendPage/156093425599982"/>
+                            <img src="http://statics.zhuishushenqi.com/recommendPage/156093425599982" />
                         </div>
                         <div className="swiper-slide">
-                            <img src="http://statics.zhuishushenqi.com/recommendPage/156093429624665"/>
+                            <img src="http://statics.zhuishushenqi.com/recommendPage/156093429624665" />
                         </div>
                         <div className="swiper-slide">
-                            <img src="http://statics.zhuishushenqi.com/recommendPage/156093432990518"/>
+                            <img src="http://statics.zhuishushenqi.com/recommendPage/156093432990518" />
                         </div>
                     </div>
                     <div className="swiper-pagination"></div>
                 </div>
-    {/* -----分类导航模块------- */}
+                {/* -----分类导航模块------- */}
                 <div className="cartoonNav">
                     <div className="nav">
                         <a href="#">
@@ -51,7 +67,7 @@ class CarToon extends Component{
                         </a>
                     </div>
                 </div>
-    {/* ----人气推荐- 2版------- */}
+                {/* ----人气推荐- 2版------- */}
                 <div className="personHot">
                     <h4 className="title">
                         <div className="titleLeft">
@@ -63,9 +79,9 @@ class CarToon extends Component{
                             <i></i>
                         </a>
                     </h4>
-                    <CarToonBookList/>
+                    <CarToonBookList val={rqbooks} />
                 </div>
-    {/* --------独家首发--3版------ */}
+                {/* --------独家首发--3版------ */}
                 <div className="personHot">
                     <h4 className="title">
                         <div className="titleLeft">
@@ -77,15 +93,18 @@ class CarToon extends Component{
                             <i></i>
                         </a>
                     </h4>
-                    <a className="firstBig">
-                        <img className="bigbanner"  src="http://statics.zhuishushenqi.com/cover/154901345081447?imageView2/3/w/750/h/310/q/40"/>
-                        <h4>拂晓的花嫁</h4>
-                        <p>沉沦在你的鲜血里</p>
-                    </a>
-                    
-                    <CarToonBookList/>
+                    {
+                        hotbloodbooks.slice(16, 17).map((item, index) => (
+                            <a href={item.getIn(["_id"])} className="firstBig" key={index} >
+                                <img className="bigbanner" src="http://statics.zhuishushenqi.com/cover/154901345081447?imageView2/3/w/750/h/310/q/40" />
+                                <h4>{item.getIn(["title"])}</h4>
+                                <p>{item.getIn(["shortIntro"])}</p>
+                            </a>
+                        ))
+                    }
+                    <NewCartoonBooks val={djbooks} />
                 </div>
-    {/* --------热血少年--2版------ */}
+                {/* --------热血少年--2版------ */}
                 <div className="personHot">
                     <h4 className="title">
                         <div className="titleLeft">
@@ -97,9 +116,9 @@ class CarToon extends Component{
                             <i></i>
                         </a>
                     </h4>
-                    <CarToonBookList/>
+                    <CarToonBookList val={hotbloodbooks} />
                 </div>
-    {/* --------完结佳作--3版------ */}
+                {/* --------完结佳作--3版------ */}
                 <div className="personHot">
                     <h4 className="title">
                         <div className="titleLeft">
@@ -111,9 +130,9 @@ class CarToon extends Component{
                             <i></i>
                         </a>
                     </h4>
-                    <CarToonListT/>
+                    <NewCartoonBooks val={finishbooks} />
                 </div>
-    {/* --------少女纯爱-2版------- */}
+                {/* --------少女纯爱-2版------- */}
                 <div className="personHot">
                     <h4 className="title">
                         <div className="titleLeft">
@@ -125,9 +144,9 @@ class CarToon extends Component{
                             <i></i>
                         </a>
                     </h4>
-                    <CarToonBookList/>
+                    <CarToonBookList val={lovebooks} />
                 </div>
-    {/* --------强力推荐--3版------ */}
+                {/* --------强力推荐--3版------ */}
                 <div className="personHot">
                     <h4 className="title">
                         <div className="titleLeft">
@@ -139,9 +158,9 @@ class CarToon extends Component{
                             <i></i>
                         </a>
                     </h4>
-                    <CarToonListT/>
+                    <NewCartoonBooks val={magicbooks} />
                 </div>
-    {/* --------抢看新作-2版------- */}
+                {/* --------抢看新作-2版------- */}
                 <div className="personHot">
                     <h4 className="title">
                         <div className="titleLeft">
@@ -153,9 +172,9 @@ class CarToon extends Component{
                             <i></i>
                         </a>
                     </h4>
-                    <CarToonBookList/>
+                    <CarToonBookList val={newbooks} />
                 </div>
-    {/* --------VIP免费--3版------ */}
+                {/* --------VIP免费--3版------ */}
                 <div className="personHot">
                     <h4 className="title">
                         <div className="titleLeft">
@@ -167,9 +186,9 @@ class CarToon extends Component{
                             <i></i>
                         </a>
                     </h4>
-                    <CarToonListT/>
+                    <NewCartoonBooks val={vipbooks} />
                 </div>
-    {/* --------爆笑治愈--3版------ */}
+                {/* --------爆笑治愈--3版------ */}
                 <div className="personHot">
                     <h4 className="title">
                         <div className="titleLeft">
@@ -181,33 +200,50 @@ class CarToon extends Component{
                             <i></i>
                         </a>
                     </h4>
-                    <CarToonListT/>
+                    <NewCartoonBooks val={laughbooks} />
                 </div>
-                <PageFooter/>
+                <PageFooter />
             </div>
         )
     }
-    componentDidMount(){
-        new Swiper ('.swiper-container', {
-           autoplay: true, 
-           loop: true, 
-           // 分页器
-           pagination: {
-             el: '.swiper-pagination',
-           },
-         })
-         this.props.getAllHotBloodBooks()        
+ 
+    componentDidMount() {
+      
+        new Swiper('.swiper-container', {
+            autoplay: true,
+            loop: true,
+            // 分页器
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        })
+        this.props.getAllHotBloodBooks()
+        this.props.getAllLaughBooks()
+        this.props.getAllLoveBooks()
+        this.props.getAllMagicBooks()
     }
-    
+
 }
 
 const mapStateToProps = (state) => ({
-    
+    hotbloodbooks: state.getIn(["cartoon", "hotbloodbooks"]),
+    laughbooks: state.getIn(["cartoon", "laughbooks"]),
+    lovebooks: state.getIn(["cartoon", "lovebooks"]),
+    magicbooks: state.getIn(["cartoon", "magicbooks"])
 })
 const mapDispacthToProps = (dispatch) => ({
-    getAllHotBloodBooks(){
+    getAllHotBloodBooks() {
         dispatch(actiongetHotBloodBooks())
+    },
+    getAllLaughBooks() {
+        dispatch(actiongetAllLaughBooks())
+    },
+    getAllLoveBooks() {
+        dispatch(actiongetAllLoveBooks())
+    },
+    getAllMagicBooks() {
+        dispatch(actiongetAllMagicBooks())
     }
 })
 
-export default connect(mapStateToProps,mapDispacthToProps)(CarToon)
+export default connect(mapStateToProps, mapDispacthToProps)(CarToon)
