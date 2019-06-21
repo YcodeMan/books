@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import {connect} from 'react-redux'
+import {withRouter} from 'react-router-dom'
 import styled from './index.scss'
 
 import BookIntorduction from '@components/BookDetails/bookIntroduction'
@@ -20,7 +21,7 @@ class BookMsg extends Component {
         let {bookDetail} = this.props
         return (
             <Fragment>
-                <PageHeader/>
+                <PageHeader tiitle='ssd'/>
                 <div className='book'>
                     <img src={ bookDetail.getIn(['Img'])} />
                     <div>
@@ -61,7 +62,8 @@ class BookMsg extends Component {
         )
     }
     componentWillMount() {
-        
+        let {id} = this.props.location.params
+        console.log('ddd')
         this.props.getBookDetails()
     }
 }
@@ -79,4 +81,4 @@ const mapDispatchToProps = (dispatch) => ({
     }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(BookMsg)
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(BookMsg))
