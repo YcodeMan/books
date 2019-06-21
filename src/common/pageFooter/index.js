@@ -17,19 +17,19 @@ export default class PageFooter extends React.Component{
                 </div>
             </div>
             <div className={style.category}>
-                <a href="/cartoon">
+                <a href="/#/cartoon">
                     <span>漫画</span>
                 </a>
-                <a href="/category?pageSource=2">
+                <a href="/#/category">
                     <span>分类</span>
                 </a>
-                <a href="/bookList">
+                <a href="/#/bookList">
                     <span>书单</span>
                 </a>
-                <a href="/mybooks">
+                <a href="/#/bookShelf/mybooks">
                     <span>书架</span>
                 </a>
-                <a href="/contactUs">
+                <a href="/#/contactUs">
                     <span>联系我们</span>
                 </a>
             </div>

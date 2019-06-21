@@ -17,14 +17,12 @@ export default class RouterConfig extends Component{
             <Router>
                 <Switch>
                     <Route path='/home' exact component={Home} />
-                    <Route path='/' exact component={Category} />
                     <Route path='/bookDetails' exact component={BookDetails} />
                     <Route path='/login' exact component={Login} />
-                    <Route path='/mybooks' exact component={BookShelf} />
-                    <Route path='/bookHistory' exact component={BookShelf} />
+                    <Route path='/bookShelf' component={BookShelf} />
                     <Route path='/category' exact component={Category} />
                     <Route path='/cartoon' exact component={Cartoon} />
-                    <Redirect to='/' />
+                    <Redirect  to='/home' />
                 </Switch>
             </Router>
         )

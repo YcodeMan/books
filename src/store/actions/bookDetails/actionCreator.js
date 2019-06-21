@@ -7,9 +7,9 @@ export const actionGetBookDetail = () =>
         let data = await getBookDetail()
          data.bookState = data.isSerial ?  '连载中' : '完结'
          data.wordAll = (parseInt(data.wordCount/10000) + '万字')
-
          // 图片处理
          data.Img = decodeURIComponent(data.cover).replace('/agent/', "")
+         console.log(data)
         dispatch({
             type: getBookDetailsType,
             value: data

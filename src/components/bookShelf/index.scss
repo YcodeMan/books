@@ -1,0 +1,122 @@
+.bookTab {
+    background: #f4f4f4;
+    i{
+        display: block;
+        height: 0.2rem;
+        width: 100%;
+    }
+
+    .top {
+        height: 1.1rem;
+        line-height: 1.1rem;
+        color: #999;
+        padding: 0 .3rem;
+
+        .right {
+            float: right;
+
+            .edit {
+                span {
+
+                    margin-right: .26667rem;
+                }
+
+                .delete {
+                    color: #b93321
+                }
+            }
+        }
+    }
+
+    .bookList {
+        background: #fff;
+        
+        a {
+            padding-left: .3rem;
+            display: block;
+
+            .inner {
+                padding: .3rem .3rem .3rem 0;
+                position: relative;
+
+                .cover {
+                    margin: 0;
+                    width: 1.2rem;
+                    height: 1.5rem;
+                    float: left;
+                    border: 1px solid #ebebeb;
+                    overflow: hidden;
+                    img{
+                        width: 100%;
+                    }
+                }
+
+                .right {
+                    margin-left: 1.5rem;
+                    height: 1.5rem;
+
+                    .name {
+                        line-height: .4rem;
+                        color: #333 !important;
+                        font-size: .28rem;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+
+                    }
+
+                    p {
+                        line-height: .4rem;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        color: #999;
+                    }
+                }
+
+                .toDetail {
+                    position: absolute;
+                    top: 20%;
+                    right: 0;
+                    width: 1rem;
+                    height: 1rem;
+                    background: transparent url(https://wechatapp.zhuishushenqi.com/zhuishu/images/icon/toBookDetail.png) 50% no-repeat;
+                    background-size: .5rem .5rem;
+                    opacity: .7;
+                }
+            }
+        }
+
+
+    }
+
+    /* 无阅读记录 */
+    .noData {
+        height: 2.7rem;
+        width: 100%;
+        text-align: center;
+        padding-top: 0.8rem;
+
+        p {
+            line-height: 1.2rem;
+            height: 1.2rem;
+            color: #999;
+
+            span {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .toHome {
+        display: block;
+        margin: .5rem auto 0;
+        width: 5.16rem;
+        height: .8rem;
+        text-align: center;
+        line-height: .8rem;
+        color: #cf1b1b;
+        font-size: .3rem;
+        border: 1px solid #cf1b1b;
+    }
+}
