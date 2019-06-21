@@ -19,8 +19,9 @@ $c_gray : #999;
         position:absolute;
         right: 0.3rem;
         bottom: .35rem;
-        font-size: .3rem;
+        font-size: .35rem;
         font-weight: 200;
+        cursor: pointer;
     }
 }
 :global(.catalogue) {

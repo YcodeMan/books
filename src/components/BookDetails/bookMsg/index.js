@@ -5,6 +5,8 @@ import styled from './index.scss'
 import BookIntorduction from '@components/BookDetails/bookIntroduction'
 import BookHotComment from '@components/BookDetails/bookHotComment'
 import BookMore from '@components/BookDetails/bookMore'
+import PageHeader from '@common/pageHeader'
+import PageFooter from '@common/pageFooter'
 
 import {actionGetBookDetail} from '@actions/bookDetails/actionCreator'
 
@@ -18,6 +20,7 @@ class BookMsg extends Component {
         let {bookDetail} = this.props
         return (
             <Fragment>
+                <PageHeader/>
                 <div className='book'>
                     <img src={ bookDetail.getIn(['Img'])} />
                     <div>
@@ -53,6 +56,7 @@ class BookMsg extends Component {
                 <BookIntorduction/>
                 <BookHotComment/>
                 <BookMore/>
+                <PageFooter/>
             </Fragment>
         )
     }
