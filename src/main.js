@@ -15,7 +15,6 @@ const render= Component => {
                 <Component/>
             </AppContainer>
         </Provider>
-       
        ,
         document.getElementById('app'),
         () => { console.log('挂载成功') }

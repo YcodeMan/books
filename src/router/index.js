@@ -5,8 +5,6 @@ import Home from '@views/home'
 import Login from '@views/login'
 import BookShelf from '@views/bookShelf';
 
-
-
 const BookDetails  = AsyncComponent(() => import('@views/BookDetails'))
 const Cartoon  = AsyncComponent(() => import('@views/cartoon'))
 const Category = AsyncComponent(() => import('@views/category'))

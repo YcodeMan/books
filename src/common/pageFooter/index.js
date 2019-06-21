@@ -1,9 +1,10 @@
 import React from 'react'
 import style from './index.scss'
-
+import {HashRouter as Router, Route, Redirect,Switch,NavLink} from 'react-router-dom'
 export default class PageFooter extends React.Component{
     render() {
         return (
+            
             <footer className={style.pageFooter}>
             <div className={style.search}>
                 <div className={style.searchInput}>
@@ -17,9 +18,9 @@ export default class PageFooter extends React.Component{
                 </div>
             </div>
             <div className={style.category}>
-                <a href="/cartoon">
+                <NavLink to="./cartoon">
                     <span>漫画</span>
-                </a>
+                </NavLink>
                 <a href="/category?pageSource=2">
                     <span>分类</span>
                 </a>
