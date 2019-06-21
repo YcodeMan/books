@@ -23,7 +23,6 @@ class PageHeader extends React.Component{
         )
     }
     back() {
-        console.log(this)
         this.props.history.goBack()
     }
 }

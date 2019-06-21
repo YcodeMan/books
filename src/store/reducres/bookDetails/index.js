@@ -4,13 +4,15 @@ import {getBookDetailsType, getBookCommentType} from '@actions/bookDetails/actio
 const defaultState = immutable.fromJS({
     bookDetail: {},
     commentList: {},
-    showComment: []
+    showComment: [],
+    id: window.sessionStorage.getItem('id') || ''
 })
 
 export default (state=defaultState, action) => {
     
    switch(action.type) {
         case getBookDetailsType:
+               
              return state.updateIn(['bookDetail'], val => val = immutable.fromJS(action.value))
         case getBookCommentType:
             return state.updateIn(['commentList'],  val => val = immutable.Map(action.value))

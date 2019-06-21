@@ -10,7 +10,6 @@ class WuXia extends Component{
     }
     render(){
         let {gfinishbooks} = this.props
-        console.log(this.props,"asfddsafas")
         let indexGbooks = gfinishbooks.slice(0,3)
         return(
             <div className="girlredbooks">

@@ -27,9 +27,9 @@ export const getTitleClass = () => http(
  * 用途： 获取书本详细信息
  * 
  */
-export const getBookDetail = () => http(
+export const getBookDetail = (id) => http(
     'get',
-    '/book/548d9c17eb0337ee6df738f5'
+    '/book/' + id
 ) 
 
 /**
@@ -37,10 +37,10 @@ export const getBookDetail = () => http(
  * book: 书本id
  * limit 数据条数
  */
-export const getBookComment = () => http(
+export const getBookComment = (bookId) => http(
     'get',
     '/post/review/best-by-book',
-    { book: '5b335b9296db9d2c6f3db6de', limit: 10}
+    { book: bookId, limit: 10}
 ) 
 
 /**
