@@ -11,7 +11,7 @@ module.exports = {
     mode: 'development',
     entry: [
         'react-hot-loader/patch',
-        __dirname + '/src/main.js'
+        PATH.app
     ],
     output: {
         filename: '[name].js',
@@ -51,10 +51,7 @@ module.exports = {
                 use: 'react-hot-loader/webpack',
                 include: /node_modules/
             },
-            // { 
-            //     test: /\.(png|woff|woff2|eot|ttf|svg)$/, 
-            //     loader: 'url-loader'
-            // }
+           
             {
                 test:/\.(jpg|png|gif)$/,
                 use:{
@@ -66,8 +63,6 @@ module.exports = {
                     }
                 }
             },
-            // { test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, 
-            //     loader: 'url-loader?limit=50000&name=[path][name].[ext]'},
         ]
     },
     plugins: [

@@ -71,7 +71,8 @@ export const getAllBooks = () => http(
  */
 export const getQhuanBooks = () => http(
     'get',
-    '/book/by-categories?gender=male&type=over&major=奇幻&minor=&start=0&limit=20'
+    '/book/by-categories',
+    {gender:'male', type: 'over', major:'奇幻', minor: '',start:0, limit: 20  }
 )
 
 
@@ -80,7 +81,8 @@ export const getQhuanBooks = () => http(
  */
 export const getXxiaBooks = () => http(
     'get',
-    '/book/by-categories?gender=male&type=over&major=仙侠&minor=&start=0&limit=20'
+    '/book/by-categories',
+    {gender:'male', type: 'over', major:'仙侠', minor: '',start:0, limit: 20  }
 )
 
 /**
@@ -88,7 +90,8 @@ export const getXxiaBooks = () => http(
  */
 export const getSchoolBooks = () => http(
     'get',
-    '/book/by-categories?gender=male&type=hot&major=都市&minor=青春校园&start=0&limit=20'
+    '/book/by-categories',
+    {gender:'male', type: 'hot', major:'都市', minor: '青春校园',start:0, limit: 20  }
 )
 
 /**
@@ -96,7 +99,8 @@ export const getSchoolBooks = () => http(
  */
 export const getGhotBooks = () => http(
     'get',
-    '/book/by-categories?gender=female&type=hot&major=现代言情&minor=&start=0&limit=20'
+    '/book/by-categories',
+    {gender:'female', type: 'hot', major:'现代言情', minor: '',start:0, limit: 20}
 )
 
 /**
@@ -104,6 +108,7 @@ export const getGhotBooks = () => http(
  */
 export const getGfinishingBooks = () => http(
     'get',
-    '/book/by-categories?gender=male&type=over&major=武侠&minor=&start=0&limit=20'
+    '/book/by-categories',
+    {gender:'male', type: 'over', major:'武侠', minor: '',start:0, limit: 20}
 )
 
