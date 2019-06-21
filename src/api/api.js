@@ -42,8 +42,6 @@ export const getBookComment = () => http(
     '/post/review/best-by-book',
     { book: '5b335b9296db9d2c6f3db6de', limit: 10}
 ) 
-    
-
 
 /**
  * 用途： 获取所有类别
@@ -110,5 +108,42 @@ export const getGfinishingBooks = () => http(
     'get',
     '/book/by-categories',
     {gender:'male', type: 'over', major:'武侠', minor: '',start:0, limit: 20}
+)
+
+// 漫画专区
+
+/**
+ * 用途： 获取热血类漫画
+ */
+export const getHotBloodBooks = () => http(
+    'get',
+    '/book/by-categories',
+    {gender:"picture",type:undefined,major:"热血",minor:"",start:0,limit:20}
+)
+/**
+ * 用途： 获取搞笑类漫画
+ */
+export const getLaughBooks = () => http(
+    'get',
+    '/book/by-categories',
+    {gender:"picture",type:undefined,major:"搞笑",minor:"",start:0,limit:20}
+)
+
+/**
+ * 用途： 获取恋爱类漫画
+ */
+export const getLoveBooks = () => http(
+    'get',
+    '/book/by-categories',
+    {gender:"picture",type:undefined,major:"恋爱",minor:"",start:0,limit:20}
+)
+
+/**
+ * 用途： 获取魔幻类漫画
+ */
+export const getMagicBooks = () => http(
+    'get',
+    '/book/by-categories',
+    {gender:"picture",type:"over",major:"魔幻",minor:"",start:0,limit:20}
 )
 

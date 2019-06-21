@@ -27,7 +27,7 @@ class QiHuan extends Component{
                 <BookContentCommon val={indexQhuan}/>
                 {
                     newQhuan.map((item,index)=>(
-                        <div className="sublist" key={index}>
+                        <div className="sublist" key={index} id={item.getIn(["_id"])}>
                             <h4>
                                 <i>{item.getIn(["majorCate"])}</i>
                                 <span>{item.getIn(["title"])}</span>

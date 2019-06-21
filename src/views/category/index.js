@@ -9,23 +9,18 @@ class Category extends React.Component {
     constructor(porps) {
         super(porps)
         this.props.getData();
+        this.state = {
+            head: {
+                title: '分类'
+            }
+        }
     }
     render() {
         let {data} = this.props
+        let {head} = this.state
         return (
             <div>
-                <PageHeader />
-                   {/* { Object.keys(data).forEach( item => {
-                        console.log(item,data[item])
-                        let arr = data[item];
-
-                        // if (item == 'male') {//title='男生'
-                        // console.log(111);
-                        //     return <a>hhh</a>
-                        // }
-                        item == 'male'?<a>hhh</a>:''
-                            
-                    })} */}
+                <PageHeader data={head}/>
                 <CategoryUI data={data}/>
                 <PageFooter />
             </div>

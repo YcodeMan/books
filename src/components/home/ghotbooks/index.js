@@ -26,7 +26,7 @@ class GirHotBooks extends Component{
                 <BookContentCommon val={indexGbooks}/>
                 {
                     newGbooks.map((item,index)=>(
-                    <div className="sublist" key={index}>
+                    <div className="sublist" key={index} id={item.getIn(["_id"])}>
                         <h4>
                             <i>{item.getIn(["majorCate"])}</i>
                             <span>{item.getIn(["title"])}</span>
