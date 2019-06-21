@@ -59,6 +59,7 @@ class bookContentCommon extends Component {
     }
     ToBookDetails(id) {
         this.props.history.push({pathname : '/bookDetail',params:{id}})
+        window.sessionStorage.setItem('id', id)
     }
 }
 

@@ -2,11 +2,16 @@ import React, { Fragment, useEffect } from 'react'
 import { connect } from 'react-redux'
 import styled from './index.scss'
 import { actionGetBookComment } from '@actions/bookDetails/actionCreator'
-const bookHotComment = ({ getBookComment, showComment }) => {
+const bookHotComment = ({ getBookComment, showComment, bookId }) => {
     let arr = []
+   
     useEffect(() => {
-        getBookComment()
-    }, [])
+        
+        if (!bookId) {
+            return
+        }
+        getBookComment(bookId)
+    }, [bookId])
     return (
         <Fragment>
             <div className='hotComment'>
@@ -59,15 +64,16 @@ const bookHotComment = ({ getBookComment, showComment }) => {
 }
 
 const mapStateToProps = (state) => ({
-    showComment: state.getIn(['bookDetails', 'showComment'])
+    showComment: state.getIn(['bookDetails', 'showComment']),
+    bookId: state.getIn(['bookDetails', 'bookDetail', '_id'])
 })
 
 
 
 const mapDispatchToProps = (dispatch) => ({
-    getBookComment() {
+    getBookComment(bookId) {
         
-        dispatch(actionGetBookComment())
+        dispatch(actionGetBookComment(bookId))
     }
 })
 
