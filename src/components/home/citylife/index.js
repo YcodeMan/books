@@ -23,7 +23,7 @@ class CityLife extends Component{
             </div>
         )
     }
-    componentWillMount(){
+    componentDidMount(){
         this.props.getAllHomeBooks()
     }
 }

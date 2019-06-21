@@ -1,21 +1,17 @@
 import React,{Component} from 'react'
-import CarToonList from "../../common/cartoonList"
-import CarToonListT from "../../common/cartoonListT"
+import CarToonBookList from "@common/cartoonList"
+
+import CarToonListT from "@common/cartoonListT"
 import PageFooter from "@common/pageFooter"
+import {connect} from 'react-redux'
 import Swiper from 'swiper/dist/js/swiper.js'
 import 'swiper/dist/css/swiper.min.css'
 import "./index.scss"
+import {actiongetAllBooks} from '@actions/cartoon/actionCreator'
 
-export default class CarToon extends Component{
-    componentDidMount(){
-        new Swiper ('.swiper-container', {
-           autoplay: true, 
-           loop: true, 
-           // 分页器
-           pagination: {
-             el: '.swiper-pagination',
-           },
-         })        
+class CarToon extends Component{
+    constructor(){
+        super()
     }
     render() {
         return(
@@ -67,7 +63,7 @@ export default class CarToon extends Component{
                             <i></i>
                         </a>
                     </h4>
-                    <CarToonList/>
+                    <CarToonBookList/>
                 </div>
     {/* --------独家首发--3版------ */}
                 <div className="personHot">
@@ -87,7 +83,7 @@ export default class CarToon extends Component{
                         <p>沉沦在你的鲜血里</p>
                     </a>
                     
-                    <CarToonListT/>
+                    <CarToonBookList/>
                 </div>
     {/* --------热血少年--2版------ */}
                 <div className="personHot">
@@ -101,7 +97,7 @@ export default class CarToon extends Component{
                             <i></i>
                         </a>
                     </h4>
-                    <CarToonList/>
+                    <CarToonBookList/>
                 </div>
     {/* --------完结佳作--3版------ */}
                 <div className="personHot">
@@ -129,7 +125,7 @@ export default class CarToon extends Component{
                             <i></i>
                         </a>
                     </h4>
-                    <CarToonList/>
+                    <CarToonBookList/>
                 </div>
     {/* --------强力推荐--3版------ */}
                 <div className="personHot">
@@ -157,7 +153,7 @@ export default class CarToon extends Component{
                             <i></i>
                         </a>
                     </h4>
-                    <CarToonList/>
+                    <CarToonBookList/>
                 </div>
     {/* --------VIP免费--3版------ */}
                 <div className="personHot">
@@ -191,4 +187,27 @@ export default class CarToon extends Component{
             </div>
         )
     }
+    componentDidMount(){
+        new Swiper ('.swiper-container', {
+           autoplay: true, 
+           loop: true, 
+           // 分页器
+           pagination: {
+             el: '.swiper-pagination',
+           },
+         })
+         this.props.getAllHotBloodBooks()        
+    }
+    
 }
+
+const mapStateToProps = (state) => ({
+    
+})
+const mapDispacthToProps = (dispatch) => ({
+    getAllHotBloodBooks(){
+        dispatch(actiongetHotBloodBooks())
+    }
+})
+
+export default connect(mapStateToProps,mapDispacthToProps)(CarToon)
