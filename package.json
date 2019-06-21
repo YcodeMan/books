@@ -24,6 +24,7 @@
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
+    "amazeui-touch": "^2.0.0-alpha.1",
     "babel-loader": "^8.0.6",
     "css-loader": "^2.1.1",
     "file-loader": "^4.0.0",

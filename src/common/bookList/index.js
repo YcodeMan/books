@@ -29,7 +29,7 @@ class bookContentCommon extends Component{
                 {
                     newMsg.map((item, index) => (
                             item.cover = decodeURIComponent(item.getIn(["cover"])).replace('/agent/', ""),
-                            <a href="#" className="booklistinfo" key={index}>
+                            <a href={item.getIn(["_id"])} className="booklistinfo" key={index}>
                                 <img className="bookpic" src={item.cover}/>
                                 <div className="bookcontent">
                                     <h3>

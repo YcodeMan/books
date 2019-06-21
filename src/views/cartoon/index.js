@@ -1,21 +1,17 @@
 import React,{Component} from 'react'
-import CarToonList from "../../common/cartoonList"
-import CarToonListT from "../../common/cartoonListT"
+import CarToonBookList from "@common/cartoonList"
+
+import CarToonListT from "@common/cartoonListT"
+import PageFooter from "@common/pageFooter"
+import {connect} from 'react-redux'
 import Swiper from 'swiper/dist/js/swiper.js'
 import 'swiper/dist/css/swiper.min.css'
 import "./index.scss"
+import {actiongetAllBooks} from '@actions/cartoon/actionCreator'
 
-
-export default class CarToon extends Component{
-    componentDidMount(){
-        new Swiper ('.swiper-container', {
-           autoplay: true, 
-           loop: true, 
-           // 分页器
-           pagination: {
-             el: '.swiper-pagination',
-           },
-         })        
+class CarToon extends Component{
+    constructor(){
+        super()
     }
     render() {
         return(
@@ -24,16 +20,16 @@ export default class CarToon extends Component{
                 <div className="swiper-container">
                     <div className="swiper-wrapper">
                         <div className="swiper-slide">
-                            <img src="/src/static/img/manhua1.png"/>
+                            <img src="http://statics.zhuishushenqi.com/recommendPage/156032547395897"/>
                         </div>
                         <div className="swiper-slide">
-                            <img src="/src/static/img/manhua2.png"/>
+                            <img src="http://statics.zhuishushenqi.com/recommendPage/156093425599982"/>
                         </div>
                         <div className="swiper-slide">
-                            <img src="/src/static/img/manhua3.png"/>
+                            <img src="http://statics.zhuishushenqi.com/recommendPage/156093429624665"/>
                         </div>
                         <div className="swiper-slide">
-                            <img src="/src/static/img/manhua4.png"/>
+                            <img src="http://statics.zhuishushenqi.com/recommendPage/156093432990518"/>
                         </div>
                     </div>
                     <div className="swiper-pagination"></div>
@@ -67,7 +63,7 @@ export default class CarToon extends Component{
                             <i></i>
                         </a>
                     </h4>
-                    <CarToonList/>
+                    <CarToonBookList/>
                 </div>
     {/* --------独家首发--3版------ */}
                 <div className="personHot">
@@ -82,12 +78,12 @@ export default class CarToon extends Component{
                         </a>
                     </h4>
                     <a className="firstBig">
-                        <img className="bigbanner"  src="/src/static/img/bigpic.png"/>
+                        <img className="bigbanner"  src="http://statics.zhuishushenqi.com/cover/154901345081447?imageView2/3/w/750/h/310/q/40"/>
                         <h4>拂晓的花嫁</h4>
                         <p>沉沦在你的鲜血里</p>
                     </a>
                     
-                    <CarToonListT/>
+                    <CarToonBookList/>
                 </div>
     {/* --------热血少年--2版------ */}
                 <div className="personHot">
@@ -101,7 +97,7 @@ export default class CarToon extends Component{
                             <i></i>
                         </a>
                     </h4>
-                    <CarToonList/>
+                    <CarToonBookList/>
                 </div>
     {/* --------完结佳作--3版------ */}
                 <div className="personHot">
@@ -129,7 +125,7 @@ export default class CarToon extends Component{
                             <i></i>
                         </a>
                     </h4>
-                    <CarToonList/>
+                    <CarToonBookList/>
                 </div>
     {/* --------强力推荐--3版------ */}
                 <div className="personHot">
@@ -157,7 +153,7 @@ export default class CarToon extends Component{
                             <i></i>
                         </a>
                     </h4>
-                    <CarToonList/>
+                    <CarToonBookList/>
                 </div>
     {/* --------VIP免费--3版------ */}
                 <div className="personHot">
@@ -187,7 +183,31 @@ export default class CarToon extends Component{
                     </h4>
                     <CarToonListT/>
                 </div>
+                <PageFooter/>
             </div>
         )
     }
+    componentDidMount(){
+        new Swiper ('.swiper-container', {
+           autoplay: true, 
+           loop: true, 
+           // 分页器
+           pagination: {
+             el: '.swiper-pagination',
+           },
+         })
+         this.props.getAllHotBloodBooks()        
+    }
+    
 }
+
+const mapStateToProps = (state) => ({
+    
+})
+const mapDispacthToProps = (dispatch) => ({
+    getAllHotBloodBooks(){
+        dispatch(actiongetHotBloodBooks())
+    }
+})
+
+export default connect(mapStateToProps,mapDispacthToProps)(CarToon)
