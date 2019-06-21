@@ -6,21 +6,21 @@ import PageFooter from '@common/pageFooter'
 import {actionCategory} from '@actions/catsAction/actionCreator'
 
 class Category extends React.Component {
-    constructor(porps) {
-        super(porps)
-        this.props.getData();
+    constructor() {
+        super()    
         this.state = {
-            head: {
-                title: '分类'
-            }
+            title: '分类'
         }
+    }
+    componentDidMount(){
+        this.props.getData();
     }
     render() {
         let {data} = this.props
-        let {head} = this.state
+        let {title} = this.state
         return (
             <div>
-                <PageHeader data={head}/>
+                <PageHeader title={title}/>
                 <CategoryUI data={data}/>
                 <PageFooter />
             </div>

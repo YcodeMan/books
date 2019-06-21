@@ -1,16 +1,20 @@
 import React from 'react'
 import style from  './index.scss'
+import Hammer from 'react-hammerjs'
+import {withRouter} from 'react-router-dom'
 
-export default class PageHeader extends React.Component{
+class PageHeader extends React.Component{
     render() {
-        let {data} = this.props
+        let {title} = this.props
         return (
-            <header className={style.pageHeader}>
-            <span className={style.back}>
-                <i className={style.icon}></i>
-                <i>返回</i>
-            </span>
-            <h1>{data.title}</h1>
+                <header className={style.pageHeader}>
+                <Hammer onTap={this.back.bind(this)}>
+                    <span className={style.back}>
+                        <i className={style.icon}></i>
+                        <i>返回</i>
+                    </span>
+                </Hammer>
+            <h1>{title}</h1>
             <div className={style.goto}>
                 <a href="" className={style.bookshelf}></a>
                 <a href="" className={style.index}></a>
@@ -18,4 +22,10 @@ export default class PageHeader extends React.Component{
         </header>
         )
     }
+    back() {
+        console.log(this)
+        this.props.history.goBack()
+    }
 }
+
+export default withRouter(PageHeader)
