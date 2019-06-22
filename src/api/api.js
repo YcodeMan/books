@@ -37,10 +37,10 @@ export const getBookDetail = (id) => http(
  * book: 书本id
  * limit 数据条数
  */
-export const getBookComment = (bookId) => http(
+export const getBookComment = (bookId, page=1) => http(
     'get',
     '/post/review/best-by-book',
-    { book: bookId, limit: 10}
+    { book: bookId, limit: page * 10}
 ) 
 
 /**

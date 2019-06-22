@@ -15,12 +15,17 @@ export const actionGetBookDetail = (id) =>
         })
     }
   
-export const actionGetBookComment = (bookId) => 
+export const actionGetBookComment = (bookId, page) => 
     async dispatch => {
-        let data = await getBookComment(bookId)
-        data.reviews.map((item) =>{
-           item.timeDiff = timeDiff(item.updated, new Date)
-        })
+        let data = await getBookComment(bookId, page)
+        try {
+            data.reviews.map((item) =>{
+                item.timeDiff = timeDiff(item.updated, new Date)
+             })
+        } catch (error) {
+            console.log('没有数据了')
+        }
+        
         dispatch({
             type: getBookCommentType,
             value: data
