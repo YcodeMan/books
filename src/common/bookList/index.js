@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react';
 import Hammer from 'react-hammerjs'
 import { withRouter } from 'react-router-dom'
 import "./index.scss"
-
 const BookList = (Warpper) =>
     class extends Component {
         constructor(props) {
@@ -22,6 +21,7 @@ class bookContentCommon extends Component {
     render() {
         let { msg } = this.props
         msg = msg === undefined ? [] : msg
+       
         let newMsg = msg.slice(0, 4)
 
         return (

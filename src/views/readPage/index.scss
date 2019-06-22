@@ -1,0 +1,33 @@
+.readPage{
+    width: 100%;
+    height: 100%;
+    background-color: #eee6dd;
+    .pageContent{
+        padding: 0.3rem 0.2rem;
+        h3{
+            font-size: 0.4rem;
+            padding:0 0.3rem;
+        }
+        .contentInner{
+            font-size: 0.3rem;
+            color: #5c5d58;
+        }
+        .code{
+            display: flex;
+           
+            flex-direction: column;
+          
+            align-items: center;
+            img{
+                margin-top: 0.6rem;
+                width: 2.6rem;
+                height: 2.6rem;
+            }
+            p{
+                padding: .3rem 1rem;
+                text-align: center;
+                white-space: pre-wrap;
+            }
+        }
+    }
+}

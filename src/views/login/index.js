@@ -7,7 +7,7 @@ export default class Login extends React.Component {
     render() {
         return (
             <div className={style.login}>
-                <PageHeader/>
+                <PageHeader title="登录"/>
                 <div className={style.inner}>
                     <div className={style.prompt}>
                         <div className={style.promptIcon}>

@@ -36,7 +36,6 @@ class GirHotBooks extends Component{
                     </div>
                     ))
                 }
-                
                 <div className="loadmore">
                     <a href="#">查看更多></a>
                 </div>

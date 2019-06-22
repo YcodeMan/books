@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
+import { withRouter ,NavLink} from 'react-router-dom'
 import styled from './index.scss'
 import immutable from 'immutable'
 
@@ -43,7 +43,11 @@ class BookMsg extends Component {
                 </div>
                 <div className='read_link'>
                     <a>加入书架</a>
-                    <a className={styled.readBtn}>开始阅读</a>
+                    {/* <a > */}
+                        <NavLink className={styled.readBtn} to="/readPage">
+                        开始阅读
+                        </NavLink>
+                        {/* </a> */}
                 </div>
                 <div className="reader-data">
                     <p>

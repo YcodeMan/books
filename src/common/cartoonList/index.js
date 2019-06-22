@@ -12,6 +12,7 @@ class extends Component{
             <List booklist={this.props.val}/>
         )
     }
+    
 }
 
 class CarToonBookList extends Component{
@@ -19,38 +20,27 @@ class CarToonBookList extends Component{
         super(props)
     }
     render(){
+        let {booklist} = this.props
+        booklist = booklist=== undefined? []:booklist
+        let newbooklist = booklist.slice(0,4)
+    
         return(
             <Fragment>
                 <div className="cartoonList">
                     <div className="contenList">
-                        <a href="#">
-                            <img src="~@static/img/list02.png"/>
-                            <div>
-                                <h4>唐寅在异界</h4>
-                                <p>杀手穿越到异世界</p>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <img src="@static/img/list02.png"/>
-                            <div>
-                                <h4>唐寅在异界</h4>
-                                <p>杀手穿越到异世界</p>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <img src="@static/img/list02.png"/>
-                            <div>
-                                <h4>唐寅在异界</h4>
-                                <p>杀手穿越到异世界</p>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <img src="@static/img/list02.png"/>
-                            <div>
-                                <h4>唐寅在异界</h4>
-                                <p>杀手穿越到异世界</p>
-                            </div>
-                        </a>
+                        {
+                            newbooklist.map((item,index)=>(
+                                item.cover = decodeURIComponent(item.getIn(["cover"])).replace('/agent/', ""),
+                                <a href={item.getIn(["_id"])} key={index}>
+                                    <img src={item.cover}/>
+                                    <div>
+                                        <h4>{item.getIn(["title"])}</h4>
+                                        <p>{item.getIn(["shortIntro"])}</p>
+                                    </div>
+                                </a>
+                            ))
+                        }
+                        
                     </div>
                 </div>
             </Fragment>

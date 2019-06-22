@@ -39,12 +39,12 @@
             width: 0.5rem;
             height: 0.5rem;
         }
-        span:nth-child(1){
+        :global(.bookshelf){
             margin-right: 0.15rem;
             background: url("~@static/img/page.png") no-repeat;
             background-size: cover;
         }
-        span:nth-child(2){
+        :global(.login){
             background: url("~@static/img/mine.png") no-repeat;
             background-size: cover;
         }
@@ -78,4 +78,8 @@
             margin-right: 0.1rem;
         }
     }
+}
+.active{
+    background-color: #fff;
+    color: #999;
 }

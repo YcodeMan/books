@@ -1,8 +1,7 @@
 import React from 'react'
 import style from  './index.scss'
 import Hammer from 'react-hammerjs'
-import {withRouter} from 'react-router-dom'
-
+import {HashRouter as Router,withRouter,Switch,Navlink} from 'react-router-dom'
 class PageHeader extends React.Component{
     render() {
         let {title} = this.props

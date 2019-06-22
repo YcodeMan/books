@@ -10,7 +10,6 @@ export default (books, num) => {
             } else {
                 arr.push(books[index])
             }
-           
         }
     return arr;
 }
