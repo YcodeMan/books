@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import "./index.scss"
-// import BookList from "../../../common/bookList"
 import BookContentCommon from '@common/bookList'
 import {actiongetAllBooks} from '@actions/home/actionCreator'
+
 
 class CityLife extends Component{
     constructor(){

@@ -1,9 +1,10 @@
 import React from 'react'
 import style from './index.scss'
-
+import {NavLink} from 'react-router-dom'
 export default class PageFooter extends React.Component{
     render() {
         return (
+            
             <footer className={style.pageFooter}>
             <div className={style.search}>
                 <div className={style.searchInput}>
@@ -17,21 +18,21 @@ export default class PageFooter extends React.Component{
                 </div>
             </div>
             <div className={style.category}>
-                <a href="/#/cartoon">
+                <NavLink to="./cartoon">
                     <span>漫画</span>
-                </a>
-                <a href="/#/category">
+                </NavLink>
+                <NavLink to="/category?pageSource=2">
                     <span>分类</span>
-                </a>
-                <a href="/#/bookList">
+                </NavLink>
+                <NavLink to="/bookList">
                     <span>书单</span>
-                </a>
-                <a href="/#/bookShelf/mybooks">
+                </NavLink>
+                <NavLink to="./bookShelf">
                     <span>书架</span>
-                </a>
-                <a href="/#/contactUs">
+                </NavLink>
+                <NavLink to="/contactUs">
                     <span>联系我们</span>
-                </a>
+                </NavLink>
             </div>
             <div className={style.coInfo +" "+ style.copy} >
                     <a target="_blank"

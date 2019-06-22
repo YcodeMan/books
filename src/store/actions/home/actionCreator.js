@@ -82,9 +82,7 @@ export const actiongetGfinishingBooks = () =>
     async dispatch => {
       
         let data = await getGfinishingBooks()
-        console.log(data,999)
             data = data.books
-    
         dispatch({
             type: getGfinishingBooksType,
             value: data

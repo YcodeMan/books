@@ -14,7 +14,7 @@ class XianXia extends Component{
     render(){
         let {xxianbooks} = this.props
         let newXxian = xxianbooks.slice(0,3)
-        // console.log(xxianbooks,543)
+        
         return(
             <div className="boygodbooks">
                 <div className="title">

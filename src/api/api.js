@@ -27,9 +27,9 @@ export const getTitleClass = () => http(
  * 用途： 获取书本详细信息
  * 
  */
-export const getBookDetail = () => http(
+export const getBookDetail = (id) => http(
     'get',
-    '/book/548d9c17eb0337ee6df738f5'
+    '/book/' + id
 ) 
 
 /**
@@ -37,10 +37,10 @@ export const getBookDetail = () => http(
  * book: 书本id
  * limit 数据条数
  */
-export const getBookComment = () => http(
+export const getBookComment = (bookId, page=1) => http(
     'get',
     '/post/review/best-by-book',
-    { book: '5b335b9296db9d2c6f3db6de', limit: 10}
+    { book: bookId, limit: page * 10}
 ) 
 
 /**
@@ -147,3 +147,11 @@ export const getMagicBooks = () => http(
     {gender:"picture",type:"over",major:"魔幻",minor:"",start:0,limit:20}
 )
 
+/**
+ * 用途： 获取主题书单
+ */
+export const getSubjectList = () => http(
+    'get',
+    '/book-list',
+    {sort:'collectorCount',duration:'last-seven-days',start:20}
+)

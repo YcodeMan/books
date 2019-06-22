@@ -21,12 +21,12 @@ class PageHeader extends React.Component{
         let {title,icon} = this.props
         return (
                 <header className={style.pageHeader}>
-                <Hammer onTap={this.toBack.bind(this)}>
-                    <span className={style.back}>
+                {/* <Hammer onTap={this.toBack.bind(this)}> */}
+                    <span className={style.back} onClick={this.toBack.bind(this)}>
                         <i className={style.icon}></i>
                         <i>返回</i>
                     </span>
-                </Hammer>
+                {/* </Hammer> */}
             <h1>{title}</h1>
             <div className={style.goto} >
                 {
@@ -40,7 +40,8 @@ class PageHeader extends React.Component{
         </header>
         )
     }
-    toBack() {
+    toBack(e) {
+        e.preventDefault()
         this.props.history.goBack()
     }
 }

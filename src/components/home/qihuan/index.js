@@ -11,7 +11,6 @@ class QiHuan extends Component{
     render(){
         let {qhuanbooks} = this.props
         let indexQhuan = qhuanbooks.slice(0,1)
-        // console.log(qhuanbooks,"89")
         let newQhuan = qhuanbooks.slice(1,4)
         return(
             <div className="boyfinishbooks">

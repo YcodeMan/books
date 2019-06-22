@@ -1,36 +1,48 @@
-import React,{Component} from 'react'
+import React,{Component,Fragment} from 'react'
 import "./index.scss"
 
-export default class CarToonList extends Component{
-
-
+const CarToonListT = (Books) => 
+class extends Component{
+    constructor(props){
+        super(props)
+    }
     render(){
         return(
-            <div className="cartoonListT">
-                <div className="contenList">
-                    <a href="#">
-                        <img src="/public/images/list01.png"/>
-                        <div class="cartoonInfo">
-                            <h4>唐寅在异界</h4>
-                            <p>杀手穿越到异世界</p>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <img src="/public/images/list01.png"/>
-                        <div class="cartoonInfo">
-                            <h4>唐寅在异界</h4>
-                            <p>杀手穿越到异世界</p>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <img src="/public/images/list01.png"/>
-                        <div class="cartoonInfo">
-                            <h4>唐寅在异界</h4>
-                            <p>杀手穿越到异世界</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            <Books Tbooklist={this.props.val}/>
         )
     }
 }
+
+class NewCartoonBooks extends Component{
+    constructor(props){
+        super(props)
+    }
+    render(){
+        let {Tbooklist} = this.props
+        Tbooklist = Tbooklist=== undefined? []:Tbooklist
+        let shortBookList = Tbooklist.slice(0,6)
+        return(
+            <Fragment>
+                <div className="cartoonListT">
+                    <div className="contenList">
+                        {
+                            shortBookList.map((item,index)=>(
+                                item.cover = decodeURIComponent(item.getIn(["cover"])).replace('/agent/', ""),
+                                <a href={item.getIn(["_id"])} key={index}>
+                                    <img src={item.cover}/>
+                                    <div className="cartoonInfo">
+                                        <h4>{item.getIn(["title"])}</h4>
+                                        <p>{item.getIn(["shortIntro"])}</p>
+                                    </div>
+                                </a>
+                            ))
+                        }
+                    </div>
+                </div>
+            </Fragment>
+        )
+    }
+}
+
+
+export default CarToonListT(NewCartoonBooks)
