@@ -37,10 +37,10 @@ export const getBookDetail = (id) => http(
  * book: 书本id
  * limit 数据条数
  */
-export const getBookComment = (bookId) => http(
+export const getBookComment = (bookId, page=1) => http(
     'get',
     '/post/review/best-by-book',
-    { book: bookId, limit: 10}
+    { book: bookId, limit: page * 10}
 ) 
 
 /**
@@ -147,6 +147,7 @@ export const getMagicBooks = () => http(
     {gender:"picture",type:"over",major:"魔幻",minor:"",start:0,limit:20}
 )
 
+<<<<<<< HEAD
 
 /**
  * 用途： 获取小说章节
@@ -169,3 +170,13 @@ export const getReadContent = () => http(
 )
 
 
+=======
+/**
+ * 用途： 获取主题书单
+ */
+export const getSubjectList = () => http(
+    'get',
+    '/book-list',
+    {sort:'collectorCount',duration:'last-seven-days',start:20}
+)
+>>>>>>> 2622cf70b5d87f7095d3469bdbc255f002bcbd14

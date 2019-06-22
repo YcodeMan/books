@@ -22,9 +22,11 @@
     :global(.title){
         padding: .06rem 0;
         font-weight: 700;
-        white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
         color: #000;
     }
     :global(.score){
@@ -43,9 +45,10 @@
     }
     :global(.content){
         overflow: hidden;
-       
+        margin-right: .3rem;
         text-overflow: ellipsis;
         line-height: .4rem;
+        word-break: break-word;
         height: .8rem;
         text-align: justify;
     }

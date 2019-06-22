@@ -9,18 +9,24 @@ export const actionGetBookDetail = (id) =>
          data.wordAll = (parseInt(data.wordCount/10000) + '万字')
          // 图片处理
          data.Img = decodeURIComponent(data.cover).replace('/agent/', "")
+         console.log(data)
         dispatch({
             type: getBookDetailsType,
             value: data
         })
     }
   
-export const actionGetBookComment = (bookId) => 
+export const actionGetBookComment = (bookId, page) => 
     async dispatch => {
-        let data = await getBookComment(bookId)
-        data.reviews.map((item) =>{
-           item.timeDiff = timeDiff(item.updated, new Date)
-        })
+        let data = await getBookComment(bookId, page)
+        try {
+            data.reviews.map((item) =>{
+                item.timeDiff = timeDiff(item.updated, new Date)
+             })
+        } catch (error) {
+            console.log('没有数据了')
+        }
+        
         dispatch({
             type: getBookCommentType,
             value: data

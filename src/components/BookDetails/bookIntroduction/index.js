@@ -15,8 +15,6 @@ const bookIntorduction = ({bookDetail,handleTap, dir}) => {
                         flag ? <span className={styled.arrow}>v</span> 
                         : <span className={styled.arrow}>^</span>
                     }
-                    
-                    
                     </div>
                 </Hammer>
             

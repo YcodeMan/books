@@ -28,9 +28,12 @@ class CarToon extends Component {
         let vipbooks = lovebooks.slice(14, 20)
         let { magicbooks } = this.props
         let newbooks = magicbooks.slice(11, 15)
+        let icon={
+            index: 'index'
+        }
         return (
             <div className="cartoon" id="cartoon">
-                <PageHeader title="漫画专区" />
+                <PageHeader title="漫画专区" icon={icon}/>
                 {/* ----轮播模块----- */}
                 <div className="swiper-container">
                     <div className="swiper-wrapper">

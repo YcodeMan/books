@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { withRouter ,NavLink} from 'react-router-dom'
 import styled from './index.scss'
+import Hammer from 'react-hammerjs'
 import immutable from 'immutable'
 
 import BookIntorduction from '@components/BookDetails/bookIntroduction'
@@ -9,7 +10,6 @@ import BookHotComment from '@components/BookDetails/bookHotComment'
 import BookMore from '@components/BookDetails/bookMore'
 import PageHeader from '@common/pageHeader'
 import PageFooter from '@common/pageFooter'
-import Hammer from 'react-hammerjs'
 import getRandBook from '@filters/getRandomBook'
 
 import { actionGetBookDetail } from '@actions/bookDetails/actionCreator'
@@ -19,14 +19,19 @@ class BookMsg extends Component {
     constructor() {
         super()
         this.state = {
+            icon : {
+                bookshelf:'bookshelf',
+                index:'index',
+            },
             msgArr: null
         }
     }
     render() {
-        let { bookDetail } = this.props
+        let {bookDetail} = this.props
+        let {icon} = this.state
         return (
             <Fragment>
-                <PageHeader title={bookDetail.getIn(['title'])} />
+                <PageHeader title={bookDetail.getIn(['title'])} icon={icon} />
                 <div className='book'>
                     <img src={bookDetail.getIn(['Img'])} />
                     <div>
@@ -42,12 +47,12 @@ class BookMsg extends Component {
                     </div>
                 </div>
                 <div className='read_link'>
-                    <a>加入书架</a>
-                    {/* <a > */}
+                    <Hammer onTap={this.addMyBooks.bind(this)}>
+                        <a>加入书架</a>
+                    </Hammer>
                         <NavLink className={styled.readBtn} to="/readPage">
                         开始阅读
                         </NavLink>
-                        {/* </a> */}
                 </div>
                 <div className="reader-data">
                     <p>
@@ -83,6 +88,28 @@ class BookMsg extends Component {
     componentWillMount() {
         let { id } = this.props.location.params || this.props
         this.props.getBookDetails(id)
+    }
+
+    //加入至书架
+    addMyBooks(){
+        let {_id,title,Img} = this.props.bookDetail.toJS();
+        let mybooks = JSON.parse(window.localStorage.getItem('mybooks'));
+        if (mybooks) {
+            let falg = true
+            mybooks.forEach(element => {
+                if(element._id == _id) {
+                    falg = false;
+                    return ;
+                }
+            });
+            if (falg) {
+                mybooks.push({_id,title,Img})
+                window.localStorage.setItem('mybooks',JSON.stringify(mybooks))
+            }
+        } else {
+            mybooks=[{_id,title,Img}];
+            window.localStorage.setItem('mybooks',JSON.stringify(mybooks))
+        }
     }
     swipeUp(e) {
         let { msgArr } = this.state
