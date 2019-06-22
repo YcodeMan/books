@@ -22,8 +22,12 @@ export default class IndexHeader extends Component{
                                 {/* <a href="#"></a> */}
                             </div>
                             <div className="icons">
-                                <span className="list"></span>
-                                <span className="home"></span>
+                                <NavLink to="./mybooks">
+                                    <span className="bookshelf"></span>
+                                </NavLink>
+                                <NavLink to="./login">
+                                    <span className="login"></span>
+                                </NavLink>
                             </div>
                         </div>
                         <div className="searchbox">

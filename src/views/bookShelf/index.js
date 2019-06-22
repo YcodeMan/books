@@ -7,7 +7,7 @@ export default class BookShelf extends React.Component {
     render() {
         return (
             <div className={style.bookShelf}>
-                <PageHeader/>
+                <PageHeader title="我的书架"/>
                 <div className={style.tab}>
                     <p className={style.item + " " + style.active}>我的书架</p>
                     <p className={style.line}></p>

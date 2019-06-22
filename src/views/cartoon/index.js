@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component} from 'react'
 import CarToonBookList from "@common/cartoonList"
 import NewCartoonBooks from "@common/cartoonListT"
 import PageFooter from "@common/pageFooter"
@@ -28,7 +28,6 @@ class CarToon extends Component {
         let vipbooks = lovebooks.slice(14, 20)
         let { magicbooks } = this.props
         let newbooks = magicbooks.slice(11, 15)
-
         return (
             <div className="cartoon" id="cartoon">
                 <PageHeader title="漫画专区" />

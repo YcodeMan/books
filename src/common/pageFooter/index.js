@@ -21,18 +21,20 @@ export default class PageFooter extends React.Component{
                 <NavLink to="./cartoon">
                     <span>漫画</span>
                 </NavLink>
-                <a href="/category?pageSource=2">
+                <NavLink to="/category?pageSource=2">
                     <span>分类</span>
-                </a>
+                </NavLink>
                 <a href="/bookList">
                     <span>书单</span>
                 </a>
-                <a href="/mybooks">
+                <NavLink to="./mybooks">
                     <span>书架</span>
-                </a>
-                <a href="/contactUs">
+                </NavLink>
+                <NavLink to="/contactUs">
+                {/* <a href="/contactUs"> */}
                     <span>联系我们</span>
-                </a>
+                {/* </a> */}
+                </NavLink>
             </div>
             <div className={style.coInfo +" "+ style.copy} >
                     <a target="_blank"
