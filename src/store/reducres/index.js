@@ -3,6 +3,7 @@ import category from './category'
 import home from "./home"
 import cartoon from "./cartoon"
 import subjectList from "./subjectList"
+import readPage from "./readPage"
 
 
 export default {
@@ -10,5 +11,6 @@ export default {
     category,
     home,
     cartoon,
-    subjectList
+    subjectList,
+    readPage
 }

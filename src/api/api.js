@@ -147,6 +147,28 @@ export const getMagicBooks = () => http(
     {gender:"picture",type:"over",major:"魔幻",minor:"",start:0,limit:20}
 )
 
+
+/**
+ * 用途： 获取小说章节
+ * 
+ */
+export const getReadList = () => http(
+    'get',
+    '/mix-atoc/50bff3ec209793513100001c?view=chapters',
+    // {bookId:"小说ID",view:"chapters"}
+)
+
+/**
+ * 用途： 获取小说内容
+ * 
+ */
+export const getReadContent = () => http(
+    'get',
+    '/chapter/http://vip.zhuishushenqi.com/chapter/5817f1161bb2ca566b0a5973?cv=1481275033588',
+    // {bookId:"小说ID",view:"chapters"}
+)
+
+
 /**
  * 用途： 获取主题书单
  */

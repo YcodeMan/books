@@ -11,11 +11,14 @@ import School from "@components/home/school"
 import QiHuan from "@components/home/qihuan"
 import XianXia from "@components/home/xianxia"
 import PageFooter from "@common/pageFooter"
+// import {Spin} from "antd"
+// import 'antd/dist/antd.min.css'
 
 export default class Home extends Component{
     render() {
         return(
-            <div>
+            <div className="home">
+                {/* <Spin size="large"/> */}
                 <IndexHeader/>
                 <MySwiper/>
                 <Nav/>

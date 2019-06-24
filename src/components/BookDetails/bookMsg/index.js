@@ -85,9 +85,12 @@ class BookMsg extends Component {
             </Fragment>
         )
     }
-    componentWillMount() {
+    componentDidMount() {
         let { id } = this.props.location.params || this.props
         this.props.getBookDetails(id)
+       this.setState({
+            msgArr: null
+       })
     }
 
     //加入至书架

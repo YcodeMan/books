@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import "./index.scss"
+import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import BookContentCommon from '@common/bookList'
 import {actiongetQhuanBooks} from '@actions/home/actionCreator'
+import Hammer from 'react-hammerjs'
 
 class QiHuan extends Component{
     constructor(){
@@ -26,15 +28,17 @@ class QiHuan extends Component{
                 <BookContentCommon val={indexQhuan}/>
                 {
                     newQhuan.map((item,index)=>(
-                        <div className="sublist" key={index} id={item.getIn(["_id"])}>
-                            <h4>
-                                <i>{item.getIn(["majorCate"])}</i>
-                                <span>{item.getIn(["title"])}</span>
-                                <b>{item.getIn(["author"])}</b>
-                            </h4>
-                            <p>{item.getIn(["shortIntro"])}
-                            </p>
-                        </div>
+                        <Hammer key={index} onTap={this.goBookDetail.bind(this,`${item.getIn(["_id"])}`)}>
+                            <div className="sublist">
+                                <h4>
+                                    <i>{item.getIn(["majorCate"])}</i>
+                                    <span>{item.getIn(["title"])}</span>
+                                    <b>{item.getIn(["author"])}</b>
+                                </h4>
+                                <p>{item.getIn(["shortIntro"])}
+                                </p>
+                            </div>
+                        </Hammer>
                     ))
                 }
                 <div className="loadmore">
@@ -45,6 +49,11 @@ class QiHuan extends Component{
     }
     componentDidMount(){
         this.props.getAllQhuanBooks()
+    }
+    goBookDetail(id) {
+        this.props.history.push({pathname : '/bookDetail',params:{id}})
+        window.sessionStorage.setItem('id', id)
+        
     }
 }
 
@@ -58,4 +67,4 @@ const mapDispatchToProps = (dispatch) => ({
     }
 })
 
-export default connect(mapStateToProps,mapDispatchToProps)(QiHuan)
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(QiHuan))

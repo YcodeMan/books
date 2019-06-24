@@ -106,6 +106,10 @@ module.exports = {
                 target: 'http://api.zhuishushenqi.com',
                 changeOrigin: true
             },
+            'chapters':{
+                target: 'http://chapterup.zhuishushenqi.com',
+                changeOrigin: true
+            },
             '/': {
                 target: 'http://api.zhuishushenqi.com',
                 changeOrigin: true

@@ -13,7 +13,7 @@ const bookHotComment = ({ getBookComment, showComment, bookId, flag,commentMsg }
     useEffect(() => {
        
         getBookComment(bookId)
-    }, [bookId])
+    }, )
     return (
         <Fragment>
             {
@@ -81,7 +81,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     getBookComment(bookId) {
-
         dispatch(actionGetBookComment(bookId))
     }
 })
