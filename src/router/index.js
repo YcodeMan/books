@@ -11,6 +11,7 @@ const Category = AsyncComponent(() => import('@views/category'))
 const BookShelf = AsyncComponent(() => import('@views/bookShelf'))
 const Login = AsyncComponent(() => import('@views/login'))
 const ReadPage = AsyncComponent(() => import('@views/readPage'))
+const SubjectList = AsyncComponent(() => import('@views/subjectList'))
 
 export default class RouterConfig extends Component{
     render() {
@@ -18,16 +19,15 @@ export default class RouterConfig extends Component{
             <Router>
                 <Switch>
                     <Route path='/home' exact component={Home} />
-                    <Route path='/' exact component={Category} />
                     <Route path='/bookDetail' exact component={BookDetails} />
                     <Route path='/bookDetail/comment' exact component={bookComment} />
                     <Route path='/login' exact component={Login} />
-                    <Route path='/mybooks' exact component={BookShelf} />
-                    <Route path='/bookHistory' exact component={BookShelf} />
+                    <Route path='/bookShelf'  component={BookShelf} />
                     <Route path='/category' exact component={Category} />
                     <Route path='/cartoon' exact component={Cartoon} />
                     <Route path='/readPage' exact component={ReadPage} />
-                    <Redirect to='/' />
+                    <Route path='/bookList' exact component={SubjectList} />
+                    <Redirect from='/' to='/home' exact />
                 </Switch>
             </Router>
         )

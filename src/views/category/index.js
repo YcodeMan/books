@@ -9,7 +9,11 @@ class Category extends React.Component {
     constructor() {
         super()    
         this.state = {
-            title: '分类'
+            title: '分类',
+            icon : {
+                bookshelf:'bookshelf',
+                index:'index',
+            }
         }
     }
     componentDidMount(){
@@ -17,10 +21,10 @@ class Category extends React.Component {
     }
     render() {
         let {data} = this.props
-        let {title} = this.state
+        let {title,icon} = this.state
         return (
             <div>
-                <PageHeader title={title}/>
+                <PageHeader title={title} icon={icon}/>
                 <CategoryUI data={data}/>
                 <PageFooter />
             </div>

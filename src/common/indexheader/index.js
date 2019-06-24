@@ -1,7 +1,7 @@
 import React, { Component,Fragment } from 'react';
 import "./index.scss"
 import LOGO from "@static/img/logo.png"
-import {HashRouter as Router, Route, Redirect,Switch,NavLink} from 'react-router-dom'
+import {HashRouter as Router, Switch,NavLink} from 'react-router-dom'
 export default class IndexHeader extends Component{
     render(){
         return(
@@ -15,14 +15,12 @@ export default class IndexHeader extends Component{
                                 <NavLink to="./boybooks">
                                     男生
                                 </NavLink>
-                                {/* <a href="#"></a> */}
                                 <NavLink to="./girlbooks">
                                     女生
                                 </NavLink>
-                                {/* <a href="#"></a> */}
                             </div>
                             <div className="icons">
-                                <NavLink to="./mybooks">
+                                <NavLink to="./bookshelf">
                                     <span className="bookshelf"></span>
                                 </NavLink>
                                 <NavLink to="./login">

@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './index.scss'
-import {HashRouter as Router, Route, Redirect,Switch,NavLink} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 export default class PageFooter extends React.Component{
     render() {
         return (
@@ -24,16 +24,14 @@ export default class PageFooter extends React.Component{
                 <NavLink to="/category?pageSource=2">
                     <span>分类</span>
                 </NavLink>
-                <a href="/bookList">
+                <NavLink to="/bookList">
                     <span>书单</span>
-                </a>
-                <NavLink to="./mybooks">
+                </NavLink>
+                <NavLink to="./bookShelf">
                     <span>书架</span>
                 </NavLink>
                 <NavLink to="/contactUs">
-                {/* <a href="/contactUs"> */}
                     <span>联系我们</span>
-                {/* </a> */}
                 </NavLink>
             </div>
             <div className={style.coInfo +" "+ style.copy} >

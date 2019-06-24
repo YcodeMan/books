@@ -1,4 +1,4 @@
-import React,{Fragment} from 'react'
+import React from 'react'
 import BookAllComment from '@components/bookAllComment'
 
 const bookComment = () => {
