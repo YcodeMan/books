@@ -21,44 +21,42 @@ class bookContentCommon extends Component {
     render() {
         let { msg } = this.props
         msg = msg === undefined ? [] : msg
-       
+
         let newMsg = msg.slice(0, 4)
 
         return (
-                    <div className="booklist">
-                        {
-                            newMsg.map((item, index) => (
-                                item.cover = decodeURIComponent(item.getIn(["cover"])).replace('/agent/', ""),
-                                <Hammer onTap={this.ToBookDetails.bind(this, item.getIn(["_id"]))} key={index}>
-                                    <a id={item.getIn(["_id"])} className="booklistinfo" >
-
-                                        <img className="bookpic" src={item.cover} />
-                                        <div className="bookcontent">
-                                            <h3>
-                                                {item.getIn(['title'])}&nbsp;
+            <div className="booklist">
+                {
+                    newMsg.map((item, index) => (
+                        item.cover = decodeURIComponent(item.getIn(["cover"])).replace('/agent/', ""),
+                        <Hammer onTap={this.ToBookDetails.bind(this, item.getIn(["_id"]))} key={index}>
+                            <a id={item.getIn(["_id"])} className="booklistinfo" >
+                                <img className="bookpic" src={item.cover} />
+                                <div className="bookcontent">
+                                    <h3>
+                                        {item.getIn(['title'])}&nbsp;
                                         <span className={item.getIn(["allowMonthly"]) ? 'goon' : 'finish'}>{
-                                                    item.getIn(["allowMonthly"]) ? "连载" : "完结"
-                                                }</span>
-                                            </h3>
-                                            <p className="bookmsg">{item.getIn(['shortIntro'])}</p>
-                                            <p className="bookkinds">
-                                                <span>{item.getIn(["majorCate"])} &nbsp;|&nbsp;<b>{item.getIn(["latelyFollower"])}</b>人气</span>
-                                                <i>{item.getIn(['minorCate'])}</i>
-                                            </p>
-                                        </div>
+                                            item.getIn(["allowMonthly"]) ? "连载" : "完结"
+                                        }</span>
+                                    </h3>
+                                    <p className="bookmsg">{item.getIn(['shortIntro'])}</p>
+                                    <p className="bookkinds">
+                                        <span>{item.getIn(["majorCate"])} &nbsp;|&nbsp;<b>{item.getIn(["latelyFollower"])}</b>人气</span>
+                                        <i>{item.getIn(['minorCate'])}</i>
+                                    </p>
+                                </div>
+                            </a>
+                        </Hammer>
 
-                                    </a>
-                                </Hammer>
+                    )
+                    )
+                }
+            </div>
 
-                            )
-                            )
-                        }
-                    </div>
-           
         )
     }
     ToBookDetails(id) {
-        this.props.history.push({pathname : '/bookDetail',params:{id}})
+        this.props.history.push({ pathname: '/bookDetail', params: { id } })
         window.sessionStorage.setItem('id', id)
     }
 }

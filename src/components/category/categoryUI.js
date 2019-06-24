@@ -5,7 +5,6 @@ export default class CategoryUI extends Component {
     render() {
         let { data } = this.props
         data == undefined ? {} : data
-        console.log(data)
         return (
             <Fragment>
                 {

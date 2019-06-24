@@ -20,6 +20,7 @@
             display: flex;
             justify-content: flex-start;
             font-size: .26rem;
+
             li {
                 padding-left: .3rem;
             }
@@ -44,6 +45,49 @@
                 font-size: 0;
                 transition: all .2s ease;
             }
+        }
+    }
+}
+
+.booklistinfo {
+    width: 100%;
+    display: flex;
+    padding: 0.2rem 0.25rem;
+    align-items: center;
+    background-color: #f5f2ed;
+    background-size: 100% 1px;
+    background-image: linear-gradient(180deg,transparent 50%,#ddd 0);
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+    .bookpic {
+        display: inline-block;
+        width: 1.25rem;
+    }
+
+    .bookcontent {
+        display: inline-block;
+        margin-left: 0.2rem;
+        padding: 0.2rem 0;
+
+        h3 {
+            font-size: 0.3rem;
+            font-weight: 100;
+        }
+
+        .bookmsg {
+            color: #999;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: 0.15rem 0;
+            width: 5.4rem;
+            white-space: nowrap;
+        }
+
+        .bookkinds {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
     }
 }

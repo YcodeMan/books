@@ -2,6 +2,7 @@ import bookDetails from './bookDetails'
 import category from './category'
 import home from "./home"
 import cartoon from "./cartoon"
+import subjectList from "./subjectList"
 
 
 export default {
@@ -9,4 +10,5 @@ export default {
     category,
     home,
     cartoon,
+    subjectList
 }

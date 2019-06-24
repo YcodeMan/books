@@ -150,8 +150,8 @@ export const getMagicBooks = () => http(
 /**
  * 用途： 获取主题书单
  */
-export const getSubjectList = () => http(
+export const getSubjectList = (...rest) => http(
     'get',
     '/book-list',
-    {sort:'collectorCount',duration:'last-seven-days',start:20}
+    {rest}
 )
