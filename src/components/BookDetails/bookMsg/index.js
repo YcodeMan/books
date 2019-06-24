@@ -43,11 +43,11 @@ class BookMsg extends Component {
                 </div>
                 <div className='read_link'>
                     <a>加入书架</a>
-                    {/* <a > */}
+                   
                         <NavLink className={styled.readBtn} to="/readPage">
                         开始阅读
                         </NavLink>
-                        {/* </a> */}
+                        
                 </div>
                 <div className="reader-data">
                     <p>
@@ -80,9 +80,12 @@ class BookMsg extends Component {
             </Fragment>
         )
     }
-    componentWillMount() {
+    componentDidMount() {
         let { id } = this.props.location.params || this.props
         this.props.getBookDetails(id)
+       this.setState({
+            msgArr: null
+       })
     }
     swipeUp(e) {
         let { msgArr } = this.state

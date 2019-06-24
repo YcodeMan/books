@@ -31,7 +31,6 @@ export default (state=defaultState, action) => {
                     .updateIn(['isNull'], val => val = false)
              // 获取评论数据
         case getBookCommentType:
-            
            if(state.getIn(['commentList']).size > 0) {
             if (action.value.total == state.getIn(['commentList', 'reviews']).size ) {
                 return state.updateIn(['isNull'], val => val = true)
