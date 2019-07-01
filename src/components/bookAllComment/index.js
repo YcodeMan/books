@@ -13,7 +13,7 @@ const bookAllComment = ({commentList, getCommentList, id, isNull, page}) => {
    window.sessionStorage.setItem('commentMsg', JSON.stringify(commentList.toJS()))
     return (
         <Fragment>
-            <PageHeader/>
+            <PageHeader title='书评' icon={{index: 'index'}}/>
             <Hammer onPanStart={getCommentList.bind(null, id,isNull,page)}>   
                 <div>
                     <BookHotComment commentMsg={commentList} flag='hide'/>
