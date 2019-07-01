@@ -3,11 +3,9 @@ import style from '@components/bookShelf/index.scss'
 import Hammer from 'react-hammerjs'
 import {connect} from 'react-redux'
 
-import {actionGetBookDetail} from '@actions/bookDetails/actionCreator'
-
 class MyBooks extends React.Component {
     render() {
-        let {mybooks,toDetail} = this.props;
+        let {mybooks} = this.props;
         return (
             <div className={style.bookTab}>
             <div className={style.top}>
@@ -23,7 +21,7 @@ class MyBooks extends React.Component {
             <div className={style.bookList}>
                 {
                     mybooks.map(item => 
-                        <a href="/book/5bc9a910c79bb70e5802fb14/1" key={item._id}>
+                        <a href="javascript:void(0);" key={item._id}>
                     <div className={style.inner}>
                         <div className={style.cover}>
                             <img src={item.Img} />
@@ -37,7 +35,7 @@ class MyBooks extends React.Component {
                             <div className={style.selectImg}></div>
                             <div className={style.selectedImg} style={{ display: 'none' }}></div>
                         </div>
-                        <Hammer onTap={toDetail.bind(this,item._id)}>
+                        <Hammer onTap={this.toDetail.bind(this,item._id)}>
                         <div className={style.toDetail}></div>
                         </Hammer>
                     </div>
@@ -49,16 +47,14 @@ class MyBooks extends React.Component {
             </div>
         )
     }
+    toDetail(id) {
+        window.sessionStorage.setItem('id',id)
+        this.props.history.push({pathname:'/bookDetail',params:{id}})
+    }
 }
 
 const mapStateToProps = state => ({
     mybooks : JSON.parse(window.localStorage.getItem('mybooks'))
 })
 
-const mapDispatchToProps = dispatch => ({
-    toDetail(id) {
-        dispatch(actionGetBookDetail())
-    }
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(MyBooks)
+export default connect(mapStateToProps, null)(MyBooks)
