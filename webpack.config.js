@@ -1,6 +1,10 @@
 const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
+const  CompressionPlugin = require('compression-webpack-plugin')
+
+
 
 const PATH = {
     app: path.join(__dirname, '/src/main.js'),
@@ -8,6 +12,7 @@ const PATH = {
 }
 
 module.exports = {
+    
     mode: 'development',
     entry: [
         'react-hot-loader/patch',
@@ -74,6 +79,14 @@ module.exports = {
             template: 'index.html'
         }),
         new webpack.HotModuleReplacementPlugin(),
+
+        // js压缩
+        new UglifyJsPlugin(),
+        
+         // gizp压缩
+         new CompressionPlugin(),
+
+        
     ],
     resolve: {
         alias: {
