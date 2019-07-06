@@ -27,10 +27,13 @@ module.exports = {
                             loader:"css-loader",
                             options:{
                                 modules:true,
+                               
                             },
                         }
                     ,'sass-loader'
                 ],
+                 exclude: path.join(__dirname, 'node_modules')
+               
             },
             {
                 test: /\.(css)$/,

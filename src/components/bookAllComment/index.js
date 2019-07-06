@@ -28,8 +28,6 @@ const bookAllComment = ({commentList, getCommentList, id, isNull, page}) => {
     )
 }
 
-
-
 const mapStateToProps = (state) => ({
     commentList: state.getIn(['bookDetails', 'commentList', 'reviews']),
     id: state.getIn(['bookDetails', 'id']),
