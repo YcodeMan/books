@@ -1,0 +1,17 @@
+.footer{
+    height: 0.72rem;
+    padding:0 0.3rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(50,51,52,.7);
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: none;
+    span{
+        font-size: 0.3rem;
+        color: #fff;
+    }
+}

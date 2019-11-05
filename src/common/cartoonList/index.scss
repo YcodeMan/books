@@ -1,0 +1,36 @@
+:global(.cartoonList){
+  
+    width: 100%;
+    :global(.contenList){
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        a{
+            margin-bottom: 0.2rem;
+            width: 50%;
+            img{
+                width: 100%;
+                height: 4.6rem;
+            }
+            h4{
+                font-size: 0.28rem;
+                color: #333;
+                padding-top: 0.1rem;
+                padding-left: 0.12rem;
+            }
+            p{
+                padding-left: 0.12rem;
+                padding-top: 0.2rem;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+        }
+        a:nth-child(2n+1){
+            padding-right: 0.1rem;
+        }
+        a:nth-child(2n+2){
+            padding-left: 0.1rem;
+        }
+    }
+}

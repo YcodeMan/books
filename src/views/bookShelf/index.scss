@@ -1,0 +1,40 @@
+.tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 1rem;
+    background: #fff;
+
+    .item {
+        width: 40%;
+        height: 1rem;
+        font-size: .28rem;
+        color: #999;
+        text-align: center;
+        line-height: 1rem
+    }
+
+    .line {
+        width: 1px;
+        height: .2rem;
+        margin: 0 .04rem;
+        background: #dfdfdf;
+    }
+
+    .active {
+        position: relative;
+        color: #b83320;
+
+        &:after {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            margin-left: -.35rem;
+            content: "";
+            width: .7rem;
+            height: .04rem;
+            background: #b83320;
+        }
+    }
+}
